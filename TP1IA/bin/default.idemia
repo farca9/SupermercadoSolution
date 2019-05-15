@@ -28,4 +28,9 @@
   <Perceptions perceived_on="//@Environment" perceived_by="//@Agent" name="eventosocial"/>
   <Perceptions perceived_on="//@Environment" perceived_by="//@Agent" name="cortecalle"/>
   <Perceptions perceived_on="//@Environment" perceived_by="//@Agent" name="comerciocerrado"/>
+  <Perceptions perceived_on="//@Environment" perceived_by="//@Agent" name="nuevoproductolista"/>
+  <Perceptions perceived_on="//@Environment" perceived_by="//@Agent" name="productoeliminadolista"/>
+  <Perceptions perceived_on="//@Environment" perceived_by="//@Agent" name="nuevocomercio"/>
+  <Perceptions perceived_on="//@Environment" perceived_by="//@Agent" name="comercioeliminado"/>
+  <Perceptions perceived_on="//@Environment" perceived_by="//@Agent" name="modificacionprecio"/>
 </idemia:AgentModel>
