@@ -2093,3 +2093,85 @@ Java Model Exception: Java Model Status [main.java [in <default> [in src [in TP1
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 !SUBENTRY 1 org.eclipse.jdt.core 4 969 2019-05-15 15:15:38.060
 !MESSAGE main.java [in <default> [in src [in TP1IA]]] does not exist
+!SESSION 2019-05-15 15:26:17.761 -----------------------------------------------
+eclipse.buildId=I20090611-1540
+java.version=1.8.0_211
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.modeling.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.modeling.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2019-05-15 15:26:24.868
+!MESSAGE Both 'org.pnml.tools.epnk' and 'org.pnml.tools.epnk.diagram' register an extension parser for 'pnx'
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.403
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/agent/productionsystem/rete/ReteRule.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.413
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/agent/productionsystem/rete/Predicate.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.424
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/agent/productionsystem/rete/ReteNode.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.438
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/agent/productionsystem/rete/ReteMatcher.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.447
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/agent/productionsystem/rete/Join.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.456
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/agent/productionsystem/rete/filtro/Unify.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.465
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/agent/productionsystem/rete/filtro/EqualFilter.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.475
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/agent/productionsystem/simple/SimpleMatcher.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.505
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/simulator/events/SimulatorEventNotifier.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.512
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/solver/productionsystem/InferenceEngine.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.519
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/solver/productionsystem/criterias/Priority.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.524
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/solver/productionsystem/criterias/Novelty.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.598
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/solver/productionsystem/criterias/Specificity.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.605
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/solver/productionsystem/criterias/NoDuplication.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.611
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/solver/search/DepthFirstSearch.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.617
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/solver/search/UniformCostSearch.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.627
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/solver/search/NTree.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.633
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/solver/search/InformedSearchStrategy.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.639
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/solver/search/BreathFirstSearch.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.647
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/util/LatexOutput$1.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.653
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/util/LatexOutput.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.jdt.core 2 0 2019-05-15 15:33:55.660
+!MESSAGE The Java indexing could not index C:/Git/TP1-IA/TP1-IA/TP1IA/libraries/faia-0.4.3.jar|frsf/cidisi/faia/util/TreeMLWriter.class. This .class file doesn't follow the class file format specification. Please report this issue against the .class file vendor
+
+!ENTRY org.eclipse.osgi 2 1 2019-05-15 15:35:47.671
+!MESSAGE NLS unused message: Reflective3CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2019-05-15 15:35:47.683
+!MESSAGE NLS unused message: Reflective3CreationTool_desc in: messages
