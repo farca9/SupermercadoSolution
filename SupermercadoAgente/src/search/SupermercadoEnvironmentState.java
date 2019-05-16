@@ -1,21 +1,25 @@
 package search;
 
+import java.awt.Point;
+
 import frsf.cidisi.faia.state.EnvironmentState;
+import search.util.MapUnit;
 
 public class SupermercadoEnvironmentState extends EnvironmentState {
 	
-	//TODO: Setup Variables
-    private int[][] Mapa;
-    private int[] UbicacionAgente;
+	//TODO: Setup Variables - Definir bien en funcion de percepciones
+    private MapUnit[][] Mapa;
+    private Point UbicacionAgente;
 	
     public SupermercadoEnvironmentState() {
         
-        //TODO: Complete Method
-    	/*
-			// Mapa = initData0;
-			// UbicacionAgente = initData1;
-        */
         this.initState();
+    }
+    
+    public SupermercadoEnvironmentState(MapUnit[][] mapa, Point ubicacionAgente) {
+    	this.Mapa = mapa;
+    	this.UbicacionAgente = ubicacionAgente;
+    	this.initState();
     }
 
     /**
@@ -42,18 +46,7 @@ public class SupermercadoEnvironmentState extends EnvironmentState {
 	//TODO: Complete this section with agent-specific methods
     // The following methods are agent-specific:
 	
-     public int[][] getMapa(){
-        return Mapa;
-     }
-     public void setMapa(int[][] arg){
-        Mapa = arg;
-     }
-     public int[] getUbicacionAgente(){
-        return UbicacionAgente;
-     }
-     public void setUbicacionAgente(int[] arg){
-        UbicacionAgente = arg;
-     }
+    
 	
 
 }
