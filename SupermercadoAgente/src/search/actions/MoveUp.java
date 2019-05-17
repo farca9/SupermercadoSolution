@@ -1,11 +1,15 @@
 package search.actions;
 
+import java.awt.Point;
+
 import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
 import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.state.EnvironmentState;
 import search.SupermercadoAgenteState;
 import search.SupermercadoEnvironmentState;
+import search.util.MapUnit;
+import search.util.TipoEnum;
 
 public class MoveUp extends SearchAction {
 
@@ -15,12 +19,37 @@ public class MoveUp extends SearchAction {
      */
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
-        SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
+        SupermercadoAgenteState state = (SupermercadoAgenteState) s;
         
-        // TODO: Use this conditions
-        // PreConditions: null
-        // PostConditions: null
+        Point posActual = new Point(state.getUbicacion().x, state.getUbicacion().y);
+        Point posSig = new Point(state.getUbicacion().x, state.getUbicacion().y+1);
         
+        
+        if(posActual.y+1 < state.getMapa().length) {
+        	MapUnit unitUp = state.getMapa()[posSig.x][posSig.y];
+        	
+        	if(unitUp.isUp()) {
+        		TipoEnum tipo = unitUp.getTipo();
+        			
+        			if(tipo == TipoEnum.CALLENORMAL) {
+ 	
+            		} 
+        			else if (tipo == TipoEnum.BACHE) {
+
+            		} 
+            		else if (tipo == TipoEnum.CONGESTION) {
+  	
+            		} 
+            		else if (tipo == TipoEnum.EVENTO) {
+
+            		}
+        			
+        			state.setUbicacion(posSig);
+        			state.setUbicacionAnterior(posActual);
+        			return state;
+        		}
+        		
+        	}	
         return null;
     }
 
