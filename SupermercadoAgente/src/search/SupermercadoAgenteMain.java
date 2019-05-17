@@ -6,7 +6,14 @@ import frsf.cidisi.faia.simulator.SearchBasedAgentSimulator;
 public class SupermercadoAgenteMain {
 
     public static void main(String[] args) throws PrologConnectorException {
-        SupermercadoAgente agent = new SupermercadoAgente();
+        
+    	//TEST
+    	SupermercadoAgenteState test1 = new SupermercadoAgenteState();
+    	SupermercadoAgenteState test2 = test1.clone();
+    	System.out.println(test1.equals(test2));
+    	//
+    	
+    	SupermercadoAgente agent = new SupermercadoAgente();
 
         SupermercadoEnvironment environment = new SupermercadoEnvironment();
 
