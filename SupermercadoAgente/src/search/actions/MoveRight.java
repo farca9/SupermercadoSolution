@@ -25,7 +25,7 @@ public class MoveRight extends SearchAction {
         Point ubicacionAgente = agState.getUbicacion();
         
         
-        if(ubicacionAgente.x != agState.getMapa().length) { //No esta en el borde
+        if(ubicacionAgente.x+1 < agState.getMapa().length) { //No esta en el borde
         	MapUnit unitRight = agState.getMapa()[ubicacionAgente.x+1][ubicacionAgente.y];
         	
         	if(unitRight.isRight()) {
@@ -53,7 +53,7 @@ public class MoveRight extends SearchAction {
         			
         			//Se realiza el movimiento y se devuelve el nuevo estado
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x+1, nextState.getUbicacion().y));
-        			nextState.setUbicacionAnterior(new Point(nextState.getUbicacion().x, nextState.getUbicacion().y));
+        			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
         			
         			return nextState;
         		}

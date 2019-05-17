@@ -1,5 +1,7 @@
 package search.actions;
 
+import java.awt.Point;
+
 import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
 import frsf.cidisi.faia.state.AgentState;
@@ -17,11 +19,12 @@ public class SalirSupermercado extends SearchAction {
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
         
-        // TODO: Use this conditions
-        // PreConditions: null
-        // PostConditions: null
+        //TODO ver si evaluar algunas condiciones con respecto a la ubicacion anterior (por si aparece algun corte mientras esta comprando)
+        Point ubicacionSuperAux = new Point (agState.getUbicacion().x,agState.getUbicacion().y);
+        agState.setUbicacion(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
+        agState.setUbicacionAnterior(new Point(ubicacionSuperAux.x,ubicacionSuperAux.y));
         
-        return null;
+        return agState;
     }
 
     /**

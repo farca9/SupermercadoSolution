@@ -17,17 +17,24 @@
  */
 package frsf.cidisi.faia.examples.search.robot;
 
+import java.awt.Point;
+
 import frsf.cidisi.faia.exceptions.PrologConnectorException;
 import frsf.cidisi.faia.simulator.SearchBasedAgentSimulator;
 
 public class RobotMain {
 
     public static void main(String[] args) throws PrologConnectorException {
-        int[] arrayTest = {10,11,12};
-        System.out.println(arrayTest[0]);
-        System.out.println(arrayTest[1]);
-        System.out.println(arrayTest[2]);
-        System.out.println(arrayTest.length);
+
+    	Point p1 = new Point(0,0);
+    	Point p2 = new Point(0,1);
+    	Point p3 = new Point(1,0);
+    	Point p4 = new Point(1,1);
+    	
+    	System.out.println(p1.distance(p1));
+    	System.out.println(p1.distance(p2));
+    	System.out.println(p1.distance(p3));
+    	System.out.println(p1.distance(p4));
     	
     	RobotAgent agent = new RobotAgent();
 
