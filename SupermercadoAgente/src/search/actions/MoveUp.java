@@ -19,51 +19,37 @@ public class MoveUp extends SearchAction {
      */
 	@Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
-        SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
-        SupermercadoAgenteState nextState = agState.clone();
+        SupermercadoAgenteState state = (SupermercadoAgenteState) s;
         
-        Point ubicacionAgente = agState.getUbicacion();
+        Point posActual = new Point(state.getUbicacion().x, state.getUbicacion().y);
+        Point posSig = new Point(state.getUbicacion().x, state.getUbicacion().y+1);
         
         
-        if(ubicacionAgente.y+1 < agState.getMapa()[0].length) { //No esta en el borde
-        	MapUnit unitUp = agState.getMapa()[ubicacionAgente.x][ubicacionAgente.y+1];
-
+        if(posActual.y+1 < state.getMapa().length) {
+        	MapUnit unitUp = state.getMapa()[posSig.x][posSig.y];
+        	
         	if(unitUp.isUp()) {
         		TipoEnum tipo = unitUp.getTipo();
-        		
-        		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
         			
         			if(tipo == TipoEnum.CALLENORMAL) {
-            			
-        				//ningun cambio costo/tiempo
-        				
-            		} else if (tipo == TipoEnum.BACHE) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		} else if (tipo == TipoEnum.CONGESTION) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		} else if (tipo == TipoEnum.EVENTO) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
+ 	
+            		} 
+        			else if (tipo == TipoEnum.BACHE) {
+
+            		} 
+            		else if (tipo == TipoEnum.CONGESTION) {
+  	
+            		} 
+            		else if (tipo == TipoEnum.EVENTO) {
+
             		}
         			
-        			//Se realiza el movimiento y se devuelve el nuevo estado
-        			nextState.setUbicacion(new Point(nextState.getUbicacion().x, nextState.getUbicacion().y+1));
-        			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
-        			
-        			return nextState;
+        			state.setUbicacion(posSig);
+        			state.setUbicacionAnterior(posActual);
+        			return state;
         		}
         		
-        	}
-        	
-        }
-        
-        
-        
+        	}	
         return null;
     }
 
