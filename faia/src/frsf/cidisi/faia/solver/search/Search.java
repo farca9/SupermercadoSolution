@@ -109,6 +109,7 @@ public class Search extends Solve {
                 // Every item in the action list represents a possible son for the actual node.-
                 for (int i = 0; i < actionList.size(); i++) {
                     // The state of the selected node must be cloned to assure consistence.-
+                	SearchBasedAgentState prev = firstNode.getAgentState();
                     SearchBasedAgentState ast = firstNode.getAgentState().clone();
                     // This is the action that can generate a new node.- 
                     SearchAction action = actionList.elementAt(i);

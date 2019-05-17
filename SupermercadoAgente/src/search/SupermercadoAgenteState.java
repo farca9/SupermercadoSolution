@@ -51,8 +51,8 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	}
     	
     	MapUnit[][] clonMapa = new MapUnit[Mapa.length][Mapa[0].length];  //Se asume que el mapa es cuadrado
-    	for(int i = 0; i<Mapa.length-1; i++) {
-    		for(int j = 0; j<Mapa[i].length-1; j++) {
+    	for(int i = 0; i<Mapa.length; i++) {
+    		for(int j = 0; j<Mapa[i].length; j++) {
     			clonMapa[i][j]=Mapa[i][j].clone();
     		}
     	}
@@ -86,7 +86,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	//Estado inicial del Agente
     	
     	//Inicializacion del mapa
-    	Mapa = new MapUnit[4][3];
+    	/*Mapa = new MapUnit[4][3];
     	
     	Mapa[0][0]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, false);
     	Mapa[0][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, false);
@@ -103,11 +103,33 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	Mapa[3][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
     	Mapa[3][1]= new MapUnit(TipoEnum.SUPERMERCADO, 0, 0, false, false, false, false);
     	Mapa[3][2]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);    	    			
+    	*/
+    	Mapa = new MapUnit[5][3];
+    	
+    	Mapa[0][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	Mapa[0][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, false, true);
+    	Mapa[0][2]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	
+    	Mapa[1][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	Mapa[1][1]= new MapUnit(TipoEnum.CALLENORMAL, 0, 0, false, false, false, true);
+    	Mapa[1][2]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	
+    	Mapa[2][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	Mapa[2][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, false, true);
+    	Mapa[2][2]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	
+    	Mapa[3][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	Mapa[3][1]= new MapUnit(TipoEnum.CALLENORMAL, 0, 0, false, false, false, true);
+    	Mapa[3][2]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false); 
+    	
+    	Mapa[4][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	Mapa[4][1]= new MapUnit(TipoEnum.SUPERMERCADO, 0, 0, false, false, false, false);
+    	Mapa[4][2]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
     	
     	
     	//Ubicacion Inicial
-    	this.Ubicacion=new Point(0,0);
-    	this.UbicacionAnterior=new Point(0,0);
+    	this.Ubicacion=new Point(0,1);
+    	this.UbicacionAnterior=new Point(0,1);
     	
     	//Producto(s)
     	Producto p = new Producto(1,"Huevos");
@@ -119,7 +141,6 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	//Matriz producto comercio
     	this.MatrizProductoComercio=new ArrayList();
     	MatrizProductoComercio.add(new ProductoComercio(p, new Comercio(1,"Alvear", new Point(3,1)), 5.0));
-    	
     	
     }
 
@@ -149,7 +170,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
      */
     @Override
     public boolean equals(Object obj) {
-   
+    	
     	if (!(obj instanceof SupermercadoAgenteState)) {
             return false;
         } else {
@@ -178,8 +199,8 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
         		return false;
         	}
         	
-        	for(int i = 0; i<Mapa.length-1; i++) {
-        		for(int j = 0; j<Mapa[i].length-1; j++) {
+        	for(int i = 0; i<Mapa.length; i++) {
+        		for(int j = 0; j<Mapa[i].length; j++) {
         			if(!receivedMapa[i][j].equals(Mapa[i][j])) {
         				return false;
         			}

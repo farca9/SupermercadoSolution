@@ -56,7 +56,6 @@ public class MoveRight extends SearchAction {
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x+1, nextState.getUbicacion().y));
         			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
         			
-        			System.out.println("Right");
         			
         			return nextState;
         		}
@@ -64,8 +63,6 @@ public class MoveRight extends SearchAction {
         	}
         	
         }
-        
-        
         
         return null;
     }
