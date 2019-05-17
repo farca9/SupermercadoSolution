@@ -73,12 +73,50 @@ public class MoveLeft extends SearchAction {
      */
     @Override
     public EnvironmentState execute(AgentState ast, EnvironmentState est) {
-        SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
+    	SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
 
-        // TODO: Use this conditions
-        // PreConditions: null
-        // PostConditions: null
+        Point ubicacionAgente = agState.getUbicacion();
+          
+        if(ubicacionAgente.x > 0) { //No esta en el borde
+        	MapUnit unitLeft = agState.getMapa()[ubicacionAgente.x-1][ubicacionAgente.y];
+        	MapUnit thisUnit = agState.getMapa()[ubicacionAgente.x][ubicacionAgente.y];
+        	
+        	if(thisUnit.isUp()) {
+        		TipoEnum tipo = unitLeft.getTipo();
+        		
+        		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
+        			
+        			if(tipo == TipoEnum.CALLENORMAL) {
+            			
+        				//ningun cambio costo/tiempo
+        				
+            		} else if (tipo == TipoEnum.BACHE) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		} else if (tipo == TipoEnum.CONGESTION) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		} else if (tipo == TipoEnum.EVENTO) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		}
+        			
+        			//Se realiza el movimiento y se devuelve el nuevo estado
+        			Point nuevaUbicacion = new Point(agState.getUbicacion().x-1, agState.getUbicacion().y);
+        			Point ubicacionPrevia = new Point(agState.getUbicacion().x, agState.getUbicacion().y);
+        			
+        			agState.setUbicacion(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
+        			agState.setUbicacionAnterior(new Point(ubicacionPrevia.x, ubicacionPrevia.y));
+        			
+        		}
+        		
+        	}
+        	
+        }
         
         if (true) {
             // Update the real world

@@ -1,5 +1,6 @@
 package search;
 
+import java.awt.Point;
 import java.util.Map;
 
 import frsf.cidisi.faia.agent.search.GoalTest;
@@ -18,11 +19,14 @@ public class SupermercadoAgenteGoal extends GoalTest {
     	}*/
     	
     	//GOAL TEST
-    	if(!((SupermercadoAgenteState)agentState).getMatrizProductoComercio().get(0).getComercio().getUbicacion().equals(((SupermercadoAgenteState)agentState).getUbicacion())) {
+    	/*if(!((SupermercadoAgenteState)agentState).getMatrizProductoComercio().get(0).getComercio().getUbicacion().equals(((SupermercadoAgenteState)agentState).getUbicacion())) {
     		return false;
+    	}*/
+    	
+    	if(((SupermercadoAgenteState)agentState).getUbicacion().equals(new Point(3,1))) {
+    		return true;
     	}
     	
-    	
-        return true;
+        return false;
 	}
 }

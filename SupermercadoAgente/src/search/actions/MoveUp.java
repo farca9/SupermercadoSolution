@@ -19,38 +19,49 @@ public class MoveUp extends SearchAction {
      */
 	@Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
-        SupermercadoAgenteState state = (SupermercadoAgenteState) s;
+		SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
+        SupermercadoAgenteState nextState = agState.clone();
         
-        Point posActual = new Point(state.getUbicacion().x, state.getUbicacion().y);
-        Point posSig = new Point(state.getUbicacion().x, state.getUbicacion().y+1);        
+        Point ubicacionAgente = agState.getUbicacion();
         
-        if(posActual.y+1 < state.getMapa()[0].length) {
-        	
-        	MapUnit unitUp = state.getMapa()[posSig.x][posSig.y];
-        	MapUnit thisUnit = state.getMapa()[posActual.x][posActual.y];
+        
+        if(ubicacionAgente.y+1 < agState.getMapa()[0].length) { //No esta en el borde
+        	MapUnit unitUp = agState.getMapa()[ubicacionAgente.x][ubicacionAgente.y+1];
+        	MapUnit thisUnit = agState.getMapa()[ubicacionAgente.x][ubicacionAgente.y];
         	
         	if(thisUnit.isUp()) {
         		TipoEnum tipo = unitUp.getTipo();
+        		
+        		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
         			
         			if(tipo == TipoEnum.CALLENORMAL) {
- 	
-            		} 
-        			else if (tipo == TipoEnum.BACHE) {
-
-            		} 
-            		else if (tipo == TipoEnum.CONGESTION) {
-  	
-            		} 
-            		else if (tipo == TipoEnum.EVENTO) {
-
+            			
+        				//ningun cambio costo/tiempo
+        				
+            		} else if (tipo == TipoEnum.BACHE) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		} else if (tipo == TipoEnum.CONGESTION) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		} else if (tipo == TipoEnum.EVENTO) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
             		}
         			
-        			state.setUbicacion(new Point(posSig.x,posSig.y));
-        			state.setUbicacionAnterior(new Point(posActual.x,posActual.y));
-        			return state;
+        			//Se realiza el movimiento y se devuelve el nuevo estado
+        			nextState.setUbicacion(new Point(nextState.getUbicacion().x, nextState.getUbicacion().y+1));
+        			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
+        			
+        			return nextState;
         		}
         		
-        	}	
+        	}
+        	
+        }
         
         return null;
     }
@@ -63,9 +74,48 @@ public class MoveUp extends SearchAction {
         SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
 
-        // TODO: Use this conditions
-        // PreConditions: null
-        // PostConditions: null
+        Point ubicacionAgente = agState.getUbicacion();
+          
+        if(ubicacionAgente.y+1 < agState.getMapa()[0].length) { //No esta en el borde
+        	MapUnit unitUp = agState.getMapa()[ubicacionAgente.x][ubicacionAgente.y+1];
+        	MapUnit thisUnit = agState.getMapa()[ubicacionAgente.x][ubicacionAgente.y];
+        	
+        	if(thisUnit.isUp()) {
+        		TipoEnum tipo = unitUp.getTipo();
+        		
+        		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
+        			
+        			if(tipo == TipoEnum.CALLENORMAL) {
+            			
+        				//ningun cambio costo/tiempo
+        				
+            		} else if (tipo == TipoEnum.BACHE) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		} else if (tipo == TipoEnum.CONGESTION) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		} else if (tipo == TipoEnum.EVENTO) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		}
+        			
+        			//Se realiza el movimiento y se devuelve el nuevo estado
+        			Point nuevaUbicacion = new Point(agState.getUbicacion().x, agState.getUbicacion().y+1);
+        			Point ubicacionPrevia = new Point(agState.getUbicacion().x, agState.getUbicacion().y);
+        			
+        			agState.setUbicacion(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
+        			agState.setUbicacionAnterior(new Point(ubicacionPrevia.x, ubicacionPrevia.y));
+        			
+        		}
+        		
+        	}
+        	
+        }
+        
         
         if (true) {
             // Update the real world

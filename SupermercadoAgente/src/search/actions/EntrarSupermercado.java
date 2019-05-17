@@ -32,7 +32,7 @@ public class EntrarSupermercado extends SearchAction {
         	nextState.setUbicacionAnterior(new Point(ubicacionAgente.x,ubicacionAgente.y));
         	
         	//Ver si agregar costo/tiempo
-        	
+        	return nextState;
         }
         
         
@@ -47,9 +47,16 @@ public class EntrarSupermercado extends SearchAction {
         SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
 
-        // TODO: Use this conditions
-        // PreConditions: null
-        // PostConditions: null
+        Point ubicacionAgente = agState.getUbicacion();
+        Point ubicacionSupermercado = this.getNearbySupermarket(agState);
+        
+        if(ubicacionSupermercado != null) {
+        	
+        	agState.setUbicacion(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
+        	agState.setUbicacionAnterior(new Point(ubicacionAgente.x,ubicacionAgente.y));
+        	
+        	//Ver si agregar costo/tiempo
+        }
         
         if (true) {
             // Update the real world
@@ -83,14 +90,16 @@ public class EntrarSupermercado extends SearchAction {
 			
 	    	ArrayList<ProductoComercio> MatrizProductoComercio = s.getMatrizProductoComercio();
 	    	Point location = null;
+	    	boolean hasFound=false;
 	    	
 	    	for(ProductoComercio pc : MatrizProductoComercio) {
 	    		Comercio c = pc.getComercio();
 	    		if(new Double(c.getUbicacion().distance(s.getUbicacion())).equals(new Double(1.0))) {
-	    			if (location == null) {
+	    			if (hasFound) {
 	    				return null; //Hay mas de un supermercado aledaño, se asume que no ocurre y el operador no se ejecuta
 	    			} else {
 	    				location = new Point(c.getUbicacion().x,c.getUbicacion().y);
+	    				hasFound=true;
 	    			}
 	    		}
 	    	}

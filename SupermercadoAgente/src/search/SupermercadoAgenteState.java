@@ -97,8 +97,8 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	Mapa[1][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
     	
     	Mapa[2][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
-    	Mapa[2][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, true, false);
-    	Mapa[2][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, true);
+    	Mapa[2][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, true);
+    	Mapa[2][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, true, false);
     	
     	Mapa[3][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
     	Mapa[3][1]= new MapUnit(TipoEnum.SUPERMERCADO, 0, 0, false, false, false, false);
@@ -128,8 +128,8 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	*/
     	
     	//Ubicacion Inicial
-    	this.Ubicacion=new Point(0,1);
-    	this.UbicacionAnterior=new Point(0,1);
+    	this.Ubicacion=new Point(0,0);
+    	this.UbicacionAnterior=new Point(0,0);
     	
     	//Producto(s)
     	Producto p = new Producto(1,"Huevos");

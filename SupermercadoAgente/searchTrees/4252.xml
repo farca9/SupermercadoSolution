@@ -1,0 +1,21 @@
+<Nodonull>Id="0" Action="null" 
+- Ubicacion Actual: (0,0)
+- Ubicacion Anterior: (0,0)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]<NodoMoveUp>Id="1" Action="MoveUp" 
+- Ubicacion Actual: (0,1)
+- Ubicacion Anterior: (0,0)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]<NodoMoveUp>Id="2" Action="MoveUp" 
+- Ubicacion Actual: (0,2)
+- Ubicacion Anterior: (0,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoMoveUp><NodoSalirSupermercado>Id="3" Action="SalirSupermercado" 
+- Ubicacion Actual: (0,0)
+- Ubicacion Anterior: (0,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoSalirSupermercado></NodoMoveUp></Nodonull>
