@@ -1,11 +1,15 @@
 package search.actions;
 
+import java.awt.Point;
+import java.util.Map;
+
 import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
 import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.state.EnvironmentState;
 import search.SupermercadoAgenteState;
 import search.SupermercadoEnvironmentState;
+import search.util.*;
 
 public class ComprarProducto extends SearchAction {
 
@@ -17,11 +21,34 @@ public class ComprarProducto extends SearchAction {
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
         
-        // TODO: Use this conditions
-        // PreConditions: null
-        // PostConditions: null
+        MapUnit ubicacionActual = agState.getMapa()[agState.getUbicacion().x][agState.getUbicacion().y];
         
-        return null;
+        //Chequeo que estoy en un supermercado
+        if(ubicacionActual.getTipo() == TipoEnum.SUPERMERCADO) {
+        	
+        	//Recorro todos los productos de la lista
+        	for(Map.Entry<Producto,Boolean> producto : agState.getListaProductos().entrySet()) {
+        		
+        		//Recorro todos los productos de la matriz
+        		for(ProductoComercio pc : agState.getMatrizProductoComercio()) {
+        			
+        			//Chequeo que efectivamente el agente esta en un comercio de la Matriz
+        			if(ubicacionActual.equals(pc.getComercio().getUbicacion())) {
+        				
+        				//Chequeo si en el supermercado actual está el producto que busco
+            			if(producto.getKey().equals(pc.getProducto())) {
+            				
+            				//Compro el producto
+            				producto.setValue(true);
+            				//agState.setMontoGastado(agState.getMontoGastado() + pc.getCosto());
+            			}
+        			}		
+            	}
+        	}
+        }
+        
+        
+        return agState;
     }
 
     /**
