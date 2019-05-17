@@ -36,7 +36,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
      * process, when creating the search tree.
      */
     @Override
-    public SearchBasedAgentState clone() {
+    public SupermercadoAgenteState clone() {
         
     	SupermercadoAgenteState clonedState = new SupermercadoAgenteState();
     	
@@ -109,12 +109,16 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	this.Ubicacion=new Point(0,1);
     	this.UbicacionAnterior=null;
     	
+    	//Producto(s)
+    	Producto p = new Producto(1,"Huevos");
+    	
     	//Lista productos
     	this.ListaProductos=new HashMap();
-    	
+    	ListaProductos.put(p, false);
     	
     	//Matriz producto comercio
-
+    	this.MatrizProductoComercio=new ArrayList();
+    	MatrizProductoComercio.add(new ProductoComercio(p, new Comercio(1,"Alvear", new Point(3,1)), 5.0));
     	
     	
     }

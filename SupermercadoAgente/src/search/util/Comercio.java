@@ -8,6 +8,16 @@ public class Comercio {
 	private String nombre;
 	private Point ubicacion;
 	
+	public Comercio () {
+		
+	}
+	
+	public Comercio(int id, String nombre, Point ubicacion) {
+		this.id=id;
+		this.nombre=nombre;
+		this.ubicacion=ubicacion;
+	}
+	
 	public int getId() {
 		return id;
 	}

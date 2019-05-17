@@ -6,6 +6,16 @@ public class ProductoComercio {
 	private Double costo;
 	private Comercio comercio;
 	
+	public ProductoComercio() {
+		
+	}
+	
+	public ProductoComercio (Producto producto, Comercio comercio, Double costo) {
+		this.producto=producto;
+		this.comercio = comercio;
+		this.costo=costo;
+	}
+	
 	public Producto getProducto() {
 		return producto;
 	}
