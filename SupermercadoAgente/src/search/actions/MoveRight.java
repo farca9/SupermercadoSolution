@@ -33,6 +33,25 @@ public class MoveRight extends SearchAction {
         		
         		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
         			
+        			if(tipo == TipoEnum.CALLENORMAL) {
+            			
+        				//ningun cambio costo/tiempo
+        				
+            		} else if (tipo == TipoEnum.BACHE) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		} else if (tipo == TipoEnum.CONGESTION) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		} else if (tipo == TipoEnum.EVENTO) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		}
+        			
+        			//Se realiza el movimiento y se devuelve el nuevo estado
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x+1, nextState.getUbicacion().y));
         			nextState.setUbicacionAnterior(new Point(nextState.getUbicacion().x, nextState.getUbicacion().y));
         			
