@@ -22,13 +22,14 @@ public class MoveUp extends SearchAction {
         SupermercadoAgenteState state = (SupermercadoAgenteState) s;
         
         Point posActual = new Point(state.getUbicacion().x, state.getUbicacion().y);
-        Point posSig = new Point(state.getUbicacion().x, state.getUbicacion().y+1);
+        Point posSig = new Point(state.getUbicacion().x, state.getUbicacion().y+1);        
         
-        
-        if(posActual.y+1 < state.getMapa().length) {
-        	MapUnit unitUp = state.getMapa()[posSig.x][posSig.y];
+        if(posActual.y+1 < state.getMapa()[0].length) {
         	
-        	if(unitUp.isUp()) {
+        	MapUnit unitUp = state.getMapa()[posSig.x][posSig.y];
+        	MapUnit thisUnit = state.getMapa()[posActual.x][posActual.y];
+        	
+        	if(thisUnit.isUp()) {
         		TipoEnum tipo = unitUp.getTipo();
         			
         			if(tipo == TipoEnum.CALLENORMAL) {
@@ -44,6 +45,7 @@ public class MoveUp extends SearchAction {
 
             		}
         			
+        			System.out.println("Up");
         			state.setUbicacion(posSig);
         			state.setUbicacionAnterior(posActual);
         			return state;

@@ -27,8 +27,9 @@ public class MoveRight extends SearchAction {
         
         if(ubicacionAgente.x+1 < agState.getMapa().length) { //No esta en el borde
         	MapUnit unitRight = agState.getMapa()[ubicacionAgente.x+1][ubicacionAgente.y];
+        	MapUnit thisUnit = agState.getMapa()[ubicacionAgente.x][ubicacionAgente.y];
         	
-        	if(unitRight.isRight()) {
+        	if(thisUnit.isRight()) {
         		TipoEnum tipo = unitRight.getTipo();
         		
         		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
@@ -54,6 +55,8 @@ public class MoveRight extends SearchAction {
         			//Se realiza el movimiento y se devuelve el nuevo estado
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x+1, nextState.getUbicacion().y));
         			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
+        			
+        			System.out.println("Right");
         			
         			return nextState;
         		}
