@@ -51,7 +51,7 @@ public class SupermercadoAgente extends SearchBasedAgent {
         // Create the search strategy
         //IStepCostFunction cost = new CostFunction();
         //UniformCostSearch strategy = new UniformCostSearch(cost);          
-    	DepthFirstSearch strategy = new DepthFirstSearch();
+    	BreathFirstSearch strategy = new BreathFirstSearch();
     	
         // Create a Search object with the strategy
         Search searchSolver = new Search(strategy);
