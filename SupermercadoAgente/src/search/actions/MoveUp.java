@@ -1,11 +1,15 @@
 package search.actions;
 
+import java.awt.Point;
+
 import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
 import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.state.EnvironmentState;
 import search.SupermercadoAgenteState;
 import search.SupermercadoEnvironmentState;
+import search.util.MapUnit;
+import search.util.TipoEnum;
 
 public class MoveUp extends SearchAction {
 
@@ -13,13 +17,52 @@ public class MoveUp extends SearchAction {
      * This method updates a tree node state when the search process is running.
      * It does not updates the real world state.
      */
-    @Override
+	@Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
+        SupermercadoAgenteState nextState = agState.clone();
         
-        // TODO: Use this conditions
-        // PreConditions: null
-        // PostConditions: null
+        Point ubicacionAgente = agState.getUbicacion();
+        
+        
+        if(ubicacionAgente.y+1 < agState.getMapa()[0].length) { //No esta en el borde
+        	MapUnit unitUp = agState.getMapa()[ubicacionAgente.x][ubicacionAgente.y+1];
+
+        	if(unitUp.isUp()) {
+        		TipoEnum tipo = unitUp.getTipo();
+        		
+        		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
+        			
+        			if(tipo == TipoEnum.CALLENORMAL) {
+            			
+        				//ningun cambio costo/tiempo
+        				
+            		} else if (tipo == TipoEnum.BACHE) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		} else if (tipo == TipoEnum.CONGESTION) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		} else if (tipo == TipoEnum.EVENTO) {
+            			
+            			//alguna modificacion de costo/tiempo segun TipoEnum
+            			
+            		}
+        			
+        			//Se realiza el movimiento y se devuelve el nuevo estado
+        			nextState.setUbicacion(new Point(nextState.getUbicacion().x, nextState.getUbicacion().y+1));
+        			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
+        			
+        			return nextState;
+        		}
+        		
+        	}
+        	
+        }
+        
+        
         
         return null;
     }

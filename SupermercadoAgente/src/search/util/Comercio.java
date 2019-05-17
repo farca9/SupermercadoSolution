@@ -36,6 +36,14 @@ public class Comercio {
 	public void setUbicacion(Point ubicacion) {
 		this.ubicacion = ubicacion;
 	}
+	
+	@Override
+	public String toString() {
+		
+		return "<"+id+","+nombre+",("+ubicacion.x+","+ubicacion.y+")>";
+		
+	}
+	
 	public Comercio clone() {
 		
 		Comercio c = new Comercio();

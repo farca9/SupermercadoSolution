@@ -107,7 +107,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	
     	//Ubicacion Inicial
     	this.Ubicacion=new Point(0,1);
-    	this.UbicacionAnterior=null;
+    	this.UbicacionAnterior=new Point(0,1);
     	
     	//Producto(s)
     	Producto p = new Producto(1,"Huevos");
@@ -131,7 +131,11 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
         String str = "\n";
 
         str+="- Ubicacion Actual: ("+ Ubicacion.x+","+Ubicacion.y+")\n";
-        str+="- Ubicacion Anterior: ("+UbicacionAnterior.x+","+UbicacionAnterior.y+")\n";
+        if(UbicacionAnterior != null) {
+        	str+="- Ubicacion Anterior: ("+UbicacionAnterior.x+","+UbicacionAnterior.y+")\n";
+        } else {
+        	str+="- Ubicacion Anterior: null";
+        }
         str+="- Lista Productos: "+ListaProductos.toString()+"\n";
         str+="- MatrizProductoComercio:\n";
         str+="  "+MatrizProductoComercio.toString();
