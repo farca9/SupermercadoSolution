@@ -9,6 +9,7 @@ import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.agent.search.Problem;
 import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgent;
+import frsf.cidisi.faia.solver.search.BreathFirstSearch;
 import frsf.cidisi.faia.solver.search.IStepCostFunction;
 import frsf.cidisi.faia.solver.search.Search;
 import frsf.cidisi.faia.solver.search.UniformCostSearch;
@@ -27,8 +28,8 @@ public class SupermercadoAgente extends SearchBasedAgent {
 
         // Create the operators
         Vector<SearchAction> operators = new Vector<SearchAction>();
-        operators.addElement(new MoveUp());	
-        operators.addElement(new MoveDown());	
+        operators.addElement(new MoveDown());
+        operators.addElement(new MoveUp());		
         operators.addElement(new MoveRight());	
         operators.addElement(new MoveLeft());	
         operators.addElement(new EntrarSupermercado());	
@@ -47,9 +48,10 @@ public class SupermercadoAgente extends SearchBasedAgent {
     public Action selectAction() {
 
         // Create the search strategy
-        IStepCostFunction cost = new CostFunction();
-        UniformCostSearch strategy = new UniformCostSearch(cost);          
-
+        //IStepCostFunction cost = new CostFunction();
+        //UniformCostSearch strategy = new UniformCostSearch(cost);          
+    	BreathFirstSearch strategy = new BreathFirstSearch();
+    	
         // Create a Search object with the strategy
         Search searchSolver = new Search(strategy);
 

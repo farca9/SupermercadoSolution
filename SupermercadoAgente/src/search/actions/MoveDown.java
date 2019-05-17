@@ -27,8 +27,9 @@ public class MoveDown extends SearchAction {
         
         if(ubicacionAgente.y > 0) { //No esta en el borde
         	MapUnit unitDown = agState.getMapa()[ubicacionAgente.x][ubicacionAgente.y-1];
+        	MapUnit thisUnit = agState.getMapa()[ubicacionAgente.x][ubicacionAgente.y];
         	
-        	if(unitDown.isDown()) {
+        	if(thisUnit.isDown()) {
         		TipoEnum tipo = unitDown.getTipo();
         		
         		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
@@ -54,6 +55,7 @@ public class MoveDown extends SearchAction {
         			//Se realiza el movimiento y se devuelve el nuevo estado
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x, nextState.getUbicacion().y-1));
         			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
+        			System.out.println("Down");
         			
         			return nextState;
         		}
