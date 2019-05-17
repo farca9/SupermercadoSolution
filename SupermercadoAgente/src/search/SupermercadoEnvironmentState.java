@@ -15,12 +15,6 @@ public class SupermercadoEnvironmentState extends EnvironmentState {
         
         this.initState();
     }
-    
-    public SupermercadoEnvironmentState(MapUnit[][] mapa, Point ubicacionAgente) {
-    	this.Mapa = mapa;
-    	this.UbicacionAgente = ubicacionAgente;
-    	this.initState();
-    }
 
     /**
      * This method is used to setup the initial real world.
@@ -28,7 +22,8 @@ public class SupermercadoEnvironmentState extends EnvironmentState {
     @Override
     public void initState() {
 
-        //TODO: Complete Method
+        //Estado inicial del ambiente
+    	
     }
 
     /**

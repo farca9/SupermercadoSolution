@@ -10,6 +10,21 @@ public class MapUnit {
 	private boolean Left;
 	private boolean Right;
 	
+	public MapUnit() {
+		
+	}
+	public MapUnit(TipoEnum Tipo, int Tiempo, int Costo, boolean Up, boolean Down, boolean Left, boolean Right) {
+	
+		this.Tipo = Tipo;
+		this.Tiempo = Tiempo;
+		this.Costo = Costo;
+		this.Up = Up;
+		this.Down = Down;
+		this.Left = Left;
+		this.Right = Right;
+		
+	}
+	
 	public TipoEnum getTipo() {
 		return Tipo;
 	}

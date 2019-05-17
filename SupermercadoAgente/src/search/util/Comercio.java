@@ -1,9 +1,12 @@
 package search.util;
 
+import java.awt.Point;
+
 public class Comercio {
 
 	private int id;
 	private String nombre;
+	private Point ubicacion;
 	
 	public int getId() {
 		return id;
@@ -17,13 +20,18 @@ public class Comercio {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+	public Point getUbicacion() {
+		return ubicacion;
+	}
+	public void setUbicacion(Point ubicacion) {
+		this.ubicacion = ubicacion;
+	}
 	public Comercio clone() {
 		
 		Comercio c = new Comercio();
 		c.setId(id);
 		c.setNombre(new String(nombre));
-		
+		c.setUbicacion(new Point(ubicacion.x,ubicacion.y));
 		return c;
 	
 	}
@@ -44,8 +52,15 @@ public class Comercio {
 				return false;
 		} else if (!nombre.equals(other.nombre))
 			return false;
+		if (ubicacion == null) {
+			if (other.ubicacion != null)
+				return false;
+		} else if (!ubicacion.equals(other.ubicacion))
+			return false;
 		return true;
 	}
+	
+	
 	
 	
 	

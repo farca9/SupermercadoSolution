@@ -31,17 +31,6 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
         this.initState();
     }
     
-    public SupermercadoAgenteState(Point UbicacionInicial, HashMap ListaProductos, ArrayList MatrizProductoComercio, MapUnit[][] Mapa) {
-        
-    	this.Ubicacion = UbicacionInicial;
-    	this.UbicacionAnterior = null;
-    	this.ListaProductos = ListaProductos;
-    	this.MatrizProductoComercio = MatrizProductoComercio;
-    	this.Mapa = Mapa;
-    	
-        this.initState();
-    }
-
     /**
      * This method clones the state of the agent. It's used in the search
      * process, when creating the search tree.
@@ -94,8 +83,40 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     @Override
     public void initState() {
         
-	//TODO: Complete Method
+    	//Estado inicial del Agente
+    	
+    	//Inicializacion del mapa
+    	Mapa = new MapUnit[4][3];
+    	
+    	Mapa[0][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	Mapa[0][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, false);
+    	Mapa[0][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, false, true);
+    	
+    	Mapa[1][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	Mapa[1][1]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	Mapa[1][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	
+    	Mapa[2][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	Mapa[2][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, true, false);
+    	Mapa[2][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, true);
+    	
+    	Mapa[3][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
+    	Mapa[3][1]= new MapUnit(TipoEnum.SUPERMERCADO, 0, 0, false, false, false, false);
+    	Mapa[3][2]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);    	    			
+    	
+    	
+    	//Ubicacion Inicial
+    	this.Ubicacion=new Point(0,1);
+    	this.UbicacionAnterior=null;
+    	
+    	//Lista productos
+    	this.ListaProductos=new HashMap();
+    	
+    	
+    	//Matriz producto comercio
 
+    	
+    	
     }
 
     /**
