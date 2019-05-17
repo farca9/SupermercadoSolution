@@ -55,7 +55,6 @@ public class MoveLeft extends SearchAction {
         			//Se realiza el movimiento y se devuelve el nuevo estado
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x-1, nextState.getUbicacion().y));
         			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
-        			System.out.println("Left");
         			
         			return nextState;
         		}

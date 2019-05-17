@@ -45,7 +45,6 @@ public class MoveUp extends SearchAction {
 
             		}
         			
-        			System.out.println("Up");
         			state.setUbicacion(new Point(posSig.x,posSig.y));
         			state.setUbicacionAnterior(new Point(posActual.x,posActual.y));
         			return state;

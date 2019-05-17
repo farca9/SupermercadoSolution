@@ -55,7 +55,6 @@ public class MoveDown extends SearchAction {
         			//Se realiza el movimiento y se devuelve el nuevo estado
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x, nextState.getUbicacion().y-1));
         			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
-        			System.out.println("Down");
         			
         			return nextState;
         		}

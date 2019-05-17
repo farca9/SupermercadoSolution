@@ -86,7 +86,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	//Estado inicial del Agente
     	
     	//Inicializacion del mapa
-    	/*Mapa = new MapUnit[4][3];
+    	Mapa = new MapUnit[4][3];
     	
     	Mapa[0][0]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, false);
     	Mapa[0][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, false);
@@ -103,7 +103,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	Mapa[3][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
     	Mapa[3][1]= new MapUnit(TipoEnum.SUPERMERCADO, 0, 0, false, false, false, false);
     	Mapa[3][2]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);    	    			
-    	*/
+    	/*
     	Mapa = new MapUnit[5][3];
     	
     	Mapa[0][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
@@ -125,7 +125,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	Mapa[4][0]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
     	Mapa[4][1]= new MapUnit(TipoEnum.SUPERMERCADO, 0, 0, false, false, false, false);
     	Mapa[4][2]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
-    	
+    	*/
     	
     	//Ubicacion Inicial
     	this.Ubicacion=new Point(0,1);
