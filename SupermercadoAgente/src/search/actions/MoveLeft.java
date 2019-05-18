@@ -12,7 +12,7 @@ import search.util.MapUnit;
 import search.util.TipoEnum;
 
 public class MoveLeft extends SearchAction {
-	 private static SupermercadoAgenteState state;
+	 //private static SupermercadoAgenteState state;
     /**
      * This method updates a tree node state when the search process is running.
      * It does not updates the real world state.
@@ -20,7 +20,7 @@ public class MoveLeft extends SearchAction {
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
-        state = (SupermercadoAgenteState) s;
+        //state = (SupermercadoAgenteState) s;
         SupermercadoAgenteState nextState = agState.clone();
         
         Point ubicacionAgente = agState.getUbicacion();
@@ -37,7 +37,7 @@ public class MoveLeft extends SearchAction {
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x-1, nextState.getUbicacion().y));
         			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
         			
-        			nextState.setCosto(getCost());
+        			//nextState.setCosto(getCost());
         			
         			return nextState;
         		}
@@ -59,7 +59,7 @@ public class MoveLeft extends SearchAction {
     	SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
 
-        state = (SupermercadoAgenteState) ast;
+        //state = (SupermercadoAgenteState) ast;
         
         Point ubicacionAgente = agState.getUbicacion();
           
@@ -79,7 +79,7 @@ public class MoveLeft extends SearchAction {
 
         			agState.setUbicacion(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
         			agState.setUbicacionAnterior(new Point(ubicacionPrevia.x, ubicacionPrevia.y));
-        			agState.setCosto(getCost());
+        			//agState.setCosto(getCost());
         			
         			environmentState.setUbicacionAgente(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
         			return environmentState;
@@ -101,7 +101,7 @@ public class MoveLeft extends SearchAction {
     public Double getCost() {
     	double costo = 0.0;
     	
-    	TipoEnum tipo = state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getTipo();
+    	/*TipoEnum tipo = state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getTipo();
 		
 		costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
 				
@@ -120,7 +120,7 @@ public class MoveLeft extends SearchAction {
     			costo += costo*(0.8);
     			
     		}
-    		
+    		*/
     		return costo;
     }
 

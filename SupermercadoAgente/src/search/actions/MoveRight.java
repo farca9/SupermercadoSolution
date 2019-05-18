@@ -18,7 +18,7 @@ public class MoveRight extends SearchAction {
      * It does not updates the real world state.
      */
 	
-	private static SupermercadoAgenteState state;
+	//private static SupermercadoAgenteState state;
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
     	
@@ -26,7 +26,7 @@ public class MoveRight extends SearchAction {
     	SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
         SupermercadoAgenteState nextState = agState.clone();
         
-        state = (SupermercadoAgenteState) s;
+        //state = (SupermercadoAgenteState) s;
         
         Point ubicacionAgente = agState.getUbicacion();
         
@@ -43,7 +43,7 @@ public class MoveRight extends SearchAction {
         			//Se realiza el movimiento y se devuelve el nuevo estado
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x+1, nextState.getUbicacion().y));
         			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
-        			nextState.setCosto(getCost());
+        			//nextState.setCosto(getCost());
         			
         			return nextState;
         		}
@@ -63,7 +63,7 @@ public class MoveRight extends SearchAction {
     	SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
 
-        state = (SupermercadoAgenteState) ast;
+        //state = (SupermercadoAgenteState) ast;
         
         Point ubicacionAgente = agState.getUbicacion();
           
@@ -82,7 +82,7 @@ public class MoveRight extends SearchAction {
 
         			agState.setUbicacion(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
         			agState.setUbicacionAnterior(new Point(ubicacionPrevia.x, ubicacionPrevia.y));
-        			agState.setCosto(getCost());
+        			//agState.setCosto(getCost());
         			
         			environmentState.setUbicacionAgente(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
         			return environmentState;
@@ -104,7 +104,7 @@ public class MoveRight extends SearchAction {
     public Double getCost() {
     	double costo = 0.0;
     	
-    	TipoEnum tipo = state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getTipo();
+    	/*TipoEnum tipo = state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getTipo();
 		
 		costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
 				
@@ -123,7 +123,7 @@ public class MoveRight extends SearchAction {
     			costo += costo*(0.8);
     			
     		}
-    		
+    		*/
     		return costo;
     }
 

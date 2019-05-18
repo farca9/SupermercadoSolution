@@ -16,7 +16,7 @@ import search.util.TipoEnum;
 
 public class EntrarSupermercado extends SearchAction {
 
-	private static SupermercadoAgenteState state;
+	//private static SupermercadoAgenteState state;
 	
     /**
      * This method updates a tree node state when the search process is running.
@@ -28,7 +28,7 @@ public class EntrarSupermercado extends SearchAction {
     	SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
         SupermercadoAgenteState nextState = agState.clone();
         
-        state = (SupermercadoAgenteState) s;
+        //state = (SupermercadoAgenteState) s;
         
         Point ubicacionAgente = agState.getUbicacion();
         Point ubicacionSupermercado = this.getNearbySupermarket(nextState);
@@ -37,9 +37,7 @@ public class EntrarSupermercado extends SearchAction {
         	
         	nextState.setUbicacion(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
         	nextState.setUbicacionAnterior(new Point(ubicacionAgente.x,ubicacionAgente.y));
-        	nextState.setCosto(getCost());
-        	
-        	System.out.println(this.toString());
+        	//nextState.setCosto(getCost());
         	
         	
         	return nextState;
@@ -57,7 +55,7 @@ public class EntrarSupermercado extends SearchAction {
         SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
 
-        state = (SupermercadoAgenteState) ast;
+        //state = (SupermercadoAgenteState) ast;
         
         Point ubicacionAgente = agState.getUbicacion();
         Point ubicacionSupermercado = this.getNearbySupermarket(agState);
@@ -66,7 +64,7 @@ public class EntrarSupermercado extends SearchAction {
         	
         	agState.setUbicacion(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
         	agState.setUbicacionAnterior(new Point(ubicacionAgente.x,ubicacionAgente.y));
-        	agState.setCosto(getCost());
+        	//agState.setCosto(getCost());
         	
     		environmentState.setUbicacionAgente(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
             
@@ -86,7 +84,7 @@ public class EntrarSupermercado extends SearchAction {
     @Override
     public Double getCost() {
     	double costo = 0.0;
-    	costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
+    	//costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
         return costo;
     }
 

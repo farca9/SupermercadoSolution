@@ -11,7 +11,7 @@ import search.SupermercadoEnvironmentState;
 import search.util.TipoEnum;
 
 public class SalirSupermercado extends SearchAction {
-	private static SupermercadoAgenteState state;
+	//private static SupermercadoAgenteState state;
     /**
      * This method updates a tree node state when the search process is running.
      * It does not updates the real world state.
@@ -28,7 +28,6 @@ public class SalirSupermercado extends SearchAction {
             agState.setUbicacion(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
             agState.setUbicacionAnterior(new Point(ubicacionSuperAux.x,ubicacionSuperAux.y));
             
-            System.out.println(this.toString());
             
             return agState;
     	}
@@ -45,7 +44,7 @@ public class SalirSupermercado extends SearchAction {
         SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
         
-        state = (SupermercadoAgenteState) ast;
+        //state = (SupermercadoAgenteState) ast;
 
         if(agState.getMapa()[agState.getUbicacion().x][agState.getUbicacion().y].getTipo()==TipoEnum.SUPERMERCADO) {
         
@@ -54,7 +53,7 @@ public class SalirSupermercado extends SearchAction {
         environmentState.setUbicacionAgente(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
         
         agState.setUbicacionAnterior(new Point(ubicacionSuperAux.x,ubicacionSuperAux.y));
-        agState.setCosto(getCost());     
+        //agState.setCosto(getCost());     
         
         return environmentState;
         }
@@ -68,7 +67,7 @@ public class SalirSupermercado extends SearchAction {
     @Override
     public Double getCost() {
     	double costo = 0.0;
-    	costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
+    	//costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
         return costo;
     }
 

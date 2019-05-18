@@ -24,7 +24,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     private	HashMap<Producto,Boolean> ListaProductos;
     private ArrayList<ProductoComercio> MatrizProductoComercio;
     private MapUnit[][] Mapa;
-	private double costo = 0.0;
+	//private double costo = 0.0;
 
     public SupermercadoAgenteState() {
     
@@ -398,7 +398,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
 	}
     
 	// The following methods are agent-specific:
-
+	/*
 	public void setCosto(double c) {
 		this.costo = c;
 	}
@@ -406,6 +406,6 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
 	public double getCosto() {
 		return costo;
 	}
-	
+	*/
 }
 

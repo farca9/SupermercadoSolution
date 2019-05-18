@@ -12,7 +12,7 @@ import search.SupermercadoEnvironmentState;
 import search.util.*;
 
 public class ComprarProducto extends SearchAction {
-	private static SupermercadoAgenteState state;
+	//private static SupermercadoAgenteState state;
     /**
      * This method updates a tree node state when the search process is running.
      * It does not updates the real world state.
@@ -20,7 +20,7 @@ public class ComprarProducto extends SearchAction {
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
-        state = (SupermercadoAgenteState) s;
+        //state = (SupermercadoAgenteState) s;
         
         MapUnit ubicacionActual = agState.getMapa()[agState.getUbicacion().x][agState.getUbicacion().y];
         Point coordinadas = new Point(agState.getUbicacion().x,agState.getUbicacion().y);
@@ -42,7 +42,7 @@ public class ComprarProducto extends SearchAction {
             				
             				//Compro el producto
             				producto.setValue(true);
-            				agState.setCosto(getCost());
+            				//agState.setCosto(getCost());
             				return agState;
             				//agState.setMontoGastado(agState.getMontoGastado() + pc.getCosto());
             			}
@@ -63,7 +63,7 @@ public class ComprarProducto extends SearchAction {
         SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
 
-        state = (SupermercadoAgenteState) ast;
+        //state = (SupermercadoAgenteState) ast;
         
         MapUnit ubicacionActual = agState.getMapa()[agState.getUbicacion().x][agState.getUbicacion().y];
         Point coordinadas = new Point(agState.getUbicacion().x,agState.getUbicacion().y);
@@ -85,7 +85,7 @@ public class ComprarProducto extends SearchAction {
             				
             				//Compro el producto
             				producto.setValue(true);
-            				agState.setCosto(getCost());
+            				//agState.setCosto(getCost());
             				//agState.setMontoGastado(agState.getMontoGastado() + pc.getCosto());
             			}
         			}		
@@ -102,7 +102,7 @@ public class ComprarProducto extends SearchAction {
     @Override
     public Double getCost() {
     	double costo = 0.0;
-    	costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
+    	//costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
         return costo;
     }
 
