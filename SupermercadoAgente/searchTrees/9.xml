@@ -348,4 +348,19 @@
 - Ubicacion Anterior: (2,1)
 - Lista Productos: {<1 , Huevos> =false}
 - MatrizProductoComercio:
-  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoSalirSupermercado></Nodonull>
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoSalirSupermercado></Nodonull><Nodonull>Id="0" Action="null" 
+- Ubicacion Actual: (3,1)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<2 , Pan> =true, <1 , Huevos> =true}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> , <<2 , Pan>  , 3.0 , <2,Kilbel,(1,3)>> ]<NodoComprarProducto>Id="1" Action="ComprarProducto" 
+- Ubicacion Actual: (3,1)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =true, <2 , Pan> =true}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> , <<2 , Pan>  , 3.0 , <2,Kilbel,(1,3)>> ]</NodoComprarProducto><NodoSalirSupermercado>Id="2" Action="SalirSupermercado" 
+- Ubicacion Actual: (2,1)
+- Ubicacion Anterior: (3,1)
+- Lista Productos: {<1 , Huevos> =false, <2 , Pan> =true}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> , <<2 , Pan>  , 3.0 , <2,Kilbel,(1,3)>> ]</NodoSalirSupermercado></Nodonull>
