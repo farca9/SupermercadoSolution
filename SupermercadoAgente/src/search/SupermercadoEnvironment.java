@@ -25,9 +25,12 @@ public class SupermercadoEnvironment extends Environment {
         // Create a new perception to return
          SupermercadoAgentePerception perception = new SupermercadoAgentePerception();
 		
-		//TODO : Set the perceptions sensors
-        
-        // Return the perception
+		SupermercadoEnvironmentState state = (SupermercadoEnvironmentState)this.environmentState;
+		
+		perception.setMapaPerception(state.getMapa());
+		perception.setListaProductosPerception(state.getListaProductos());
+		perception.setMatrizProductoComercioPerception(state.getMatrizProductoComercio());
+		
         return perception;
     }
 

@@ -10,7 +10,9 @@ import frsf.cidisi.faia.state.EnvironmentState;
 import search.SupermercadoAgenteState;
 import search.SupermercadoEnvironmentState;
 import search.util.Comercio;
+import search.util.MapUnit;
 import search.util.ProductoComercio;
+import search.util.TipoEnum;
 
 public class EntrarSupermercado extends SearchAction {
 
@@ -94,7 +96,8 @@ public class EntrarSupermercado extends SearchAction {
 	    	
 	    	for(ProductoComercio pc : MatrizProductoComercio) {
 	    		Comercio c = pc.getComercio();
-	    		if(new Double(c.getUbicacion().distance(s.getUbicacion())).equals(new Double(1.0))) {
+	    		MapUnit mu = s.getMapa()[c.getUbicacion().x][c.getUbicacion().y];
+	    		if(new Double(c.getUbicacion().distance(s.getUbicacion())).equals(new Double(1.0)) && mu.getTipo()==TipoEnum.SUPERMERCADO) {
 	    			if (hasFound) {
 	    				return null; //Hay mas de un supermercado aledaño, se asume que no ocurre y el operador no se ejecuta
 	    			} else {

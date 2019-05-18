@@ -34,11 +34,13 @@ public class SupermercadoAgentePerception extends Perception {
     	
     	//TODO: Complete Method
         
-        //SupermercadoAgente agent = (SupermercadoAgente) agentIn;
-        //SupermercadoEnvironment environment = (SupermercadoEnvironment) environmentIn;
-        //SupermercadoEnvironmentState environmentState =
-        //        environment.getEnvironmentState();
-       
+        SupermercadoAgente agent = (SupermercadoAgente) agentIn;
+        SupermercadoEnvironment environment = (SupermercadoEnvironment) environmentIn;
+        SupermercadoEnvironmentState environmentState =environment.getEnvironmentState();
+        
+        this.mapaPerception=environmentState.getMapa();
+        this.listaProductosPerception=environmentState.getListaProductos();
+        this.matrizProductoComercioPerception=environmentState.getMatrizProductoComercio();       
         
     }
     
