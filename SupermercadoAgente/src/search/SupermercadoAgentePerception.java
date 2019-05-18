@@ -1,27 +1,21 @@
 package search;
 
+import java.util.List;
+
 import frsf.cidisi.faia.agent.Agent;
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.environment.Environment;
+import search.util.MapUnit;
+import search.util.MapUnitUpdater;
+import search.util.Producto;
+import search.util.ProductoComercio;
 
 public class SupermercadoAgentePerception extends Perception {
 
-	//TODO: Setup Statics
-    //public static int UNKNOWN_PERCEPTION = -1;   
 	
-	
-	//TODO: Setup Sensors
-	private int bache;
-	private int congestion;
-	private int eventosocial;
-	private int cortecalle;
-	private int comerciocerrado;
-	private int nuevoproductolista;
-	private int productoeliminadolista;
-	private int nuevocomercio;
-	private int comercioeliminado;
-	private int modificacionprecio;
-	
+	private MapUnit[][] mapaPerception;
+	private List<Producto> listaProductosPerception;
+	private List<ProductoComercio> matrizProductoComercioPerception;
  
 
     public  SupermercadoAgentePerception() {
@@ -57,69 +51,34 @@ public class SupermercadoAgentePerception extends Perception {
         return str.toString();
     }
 
+	public MapUnit[][] getMapaPerception() {
+		return mapaPerception;
+	}
+
+	public void setMapaPerception(MapUnit[][] mapaPerception) {
+		this.mapaPerception = mapaPerception;
+	}
+
+	public List<Producto> getListaProductosPerception() {
+		return listaProductosPerception;
+	}
+
+	public void setListaProductosPerception(List<Producto> listaProductosPerception) {
+		this.listaProductosPerception = listaProductosPerception;
+	}
+
+	public List<ProductoComercio> getMatrizProductoComercioPerception() {
+		return matrizProductoComercioPerception;
+	}
+
+	public void setMatrizProductoComercioPerception(List<ProductoComercio> matrizProductoComercioPerception) {
+		this.matrizProductoComercioPerception = matrizProductoComercioPerception;
+	}
+
     // The following methods are agent-specific:
     //TODO: Complete this section with the agent-specific methods
 	
-     public int getbache(){
-        return bache;
-     }
-     public void setbache(int arg){
-        this.bache = arg;
-     }
-     public int getcongestion(){
-        return congestion;
-     }
-     public void setcongestion(int arg){
-        this.congestion = arg;
-     }
-     public int geteventosocial(){
-        return eventosocial;
-     }
-     public void seteventosocial(int arg){
-        this.eventosocial = arg;
-     }
-     public int getcortecalle(){
-        return cortecalle;
-     }
-     public void setcortecalle(int arg){
-        this.cortecalle = arg;
-     }
-     public int getcomerciocerrado(){
-        return comerciocerrado;
-     }
-     public void setcomerciocerrado(int arg){
-        this.comerciocerrado = arg;
-     }
-     public int getnuevoproductolista(){
-        return nuevoproductolista;
-     }
-     public void setnuevoproductolista(int arg){
-        this.nuevoproductolista = arg;
-     }
-     public int getproductoeliminadolista(){
-        return productoeliminadolista;
-     }
-     public void setproductoeliminadolista(int arg){
-        this.productoeliminadolista = arg;
-     }
-     public int getnuevocomercio(){
-        return nuevocomercio;
-     }
-     public void setnuevocomercio(int arg){
-        this.nuevocomercio = arg;
-     }
-     public int getcomercioeliminado(){
-        return comercioeliminado;
-     }
-     public void setcomercioeliminado(int arg){
-        this.comercioeliminado = arg;
-     }
-     public int getmodificacionprecio(){
-        return modificacionprecio;
-     }
-     public void setmodificacionprecio(int arg){
-        this.modificacionprecio = arg;
-     }
+    
 	
    
 }

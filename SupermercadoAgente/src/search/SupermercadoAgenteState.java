@@ -74,7 +74,45 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     @Override
     public void updateState(Perception p) {
         
-        //TODO: Complete Method
+    	SupermercadoAgentePerception sap=(SupermercadoAgentePerception)p;
+    	
+    	//El agente actualiza su estado con los valores del mapa percibido
+    	for(int i=0;i<sap.getMapaPerception().length;i++) {
+    		for(int j=0;j<sap.getMapaPerception()[0].length;j++) {
+    			
+    			this.Mapa[i][j]=new MapUnit(sap.getMapaPerception()[i][j].getTipo(),
+    					sap.getMapaPerception()[i][j].getTiempo(),sap.getMapaPerception()[i][j].getCosto(),
+    					sap.getMapaPerception()[i][j].isUp(), sap.getMapaPerception()[i][j].isDown(),
+    					sap.getMapaPerception()[i][j].isLeft(),sap.getMapaPerception()[i][j].isRight());
+    			
+    		}
+    	}
+    	
+    	//El agente actualiza su lista de productos segun la percibida
+    	
+    	HashMap<Producto,Boolean> listaProductosNew = new HashMap();
+    	
+    	for(Producto pPercibido : sap.getListaProductosPerception()) {
+    		
+    		if(this.ListaProductos.containsKey(pPercibido)) { //Si vino en percibido y ya esta, se copia el status
+    			
+    			listaProductosNew.put(new Producto(pPercibido.getId(),pPercibido.getNombre()), ListaProductos.get(pPercibido));
+    			
+    		}else { //Si vino en percibido y no está, se agrega con false
+    			
+    			listaProductosNew.put(new Producto(pPercibido.getId(),pPercibido.getNombre()), false);
+    			
+    		}
+    		
+    		//Los productos que no estan en percibidos y si en agente, se ignoran, ya que fueron eliminados de la lista
+    		
+    	}
+    	
+    	this.ListaProductos=listaProductosNew;
+    	
+    	//El agente actualiza su matriz de producto comercio
+    	this.MatrizProductoComercio=(ArrayList<ProductoComercio>)sap.getMatrizProductoComercioPerception();
+    	
     }
 
     /**
