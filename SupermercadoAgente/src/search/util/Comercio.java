@@ -40,7 +40,7 @@ public class Comercio {
 	@Override
 	public String toString() {
 		
-		return "<"+id+","+nombre+",("+ubicacion.x+","+ubicacion.y+")>";
+		return nombre;
 		
 	}
 	
