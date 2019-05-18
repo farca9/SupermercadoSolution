@@ -399,28 +399,8 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     
 	// The following methods are agent-specific:
 
-	public void calcularCosto() {
-		
-		TipoEnum tipo = getMapa()[getUbicacion().x][getUbicacion().y].getTipo();
-    			
-		costo +=  getMapa()[getUbicacion().x][getUbicacion().y].getCosto();
-				
-    		if (tipo == TipoEnum.BACHE) {
-    			
-    			costo += costo*(0.3);
-    			
-    		} 
-    		else if (tipo == TipoEnum.CONGESTION) {
-    			
-    			costo += costo*(2);
-    			
-    		} 
-    		else if (tipo == TipoEnum.EVENTO) {
-    			
-    			costo += costo*(0.8);
-    			
-    		}
-		
+	public void setCosto(double c) {
+		this.costo = c;
 	}
 	
 	public double getCosto() {

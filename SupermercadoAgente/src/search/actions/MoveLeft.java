@@ -12,16 +12,15 @@ import search.util.MapUnit;
 import search.util.TipoEnum;
 
 public class MoveLeft extends SearchAction {
-
+	 private static SupermercadoAgenteState state;
     /**
      * This method updates a tree node state when the search process is running.
      * It does not updates the real world state.
      */
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
-    	
-    	
-    	SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
+        SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
+        state = (SupermercadoAgenteState) s;
         SupermercadoAgenteState nextState = agState.clone();
         
         Point ubicacionAgente = agState.getUbicacion();
@@ -35,12 +34,11 @@ public class MoveLeft extends SearchAction {
         		
         		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
         			//Se realiza el movimiento y se devuelve el nuevo estado
-        			
-        			nextState.calcularCosto();
-        			
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x-1, nextState.getUbicacion().y));
         			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
-        		
+        			
+        			nextState.setCosto(getCost());
+        			
         			return nextState;
         		}
         		
@@ -61,6 +59,8 @@ public class MoveLeft extends SearchAction {
     	SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
 
+        state = (SupermercadoAgenteState) ast;
+        
         Point ubicacionAgente = agState.getUbicacion();
           
         if(ubicacionAgente.x > 0) { //No esta en el borde
@@ -71,7 +71,7 @@ public class MoveLeft extends SearchAction {
         		TipoEnum tipo = unitLeft.getTipo();
         		
         		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
-        			agState.calcularCosto();
+        			
         			
         			//Se realiza el movimiento y se devuelve el nuevo estado
         			Point nuevaUbicacion = new Point(agState.getUbicacion().x-1, agState.getUbicacion().y);
@@ -79,6 +79,7 @@ public class MoveLeft extends SearchAction {
 
         			agState.setUbicacion(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
         			agState.setUbicacionAnterior(new Point(ubicacionPrevia.x, ubicacionPrevia.y));
+        			agState.setCosto(getCost());
         			
         			environmentState.setUbicacionAgente(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
         			return environmentState;
@@ -98,7 +99,29 @@ public class MoveLeft extends SearchAction {
      */
     @Override
     public Double getCost() {
-        return new Double(0);
+    	double costo = 0.0;
+    	
+    	TipoEnum tipo = state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getTipo();
+		
+		costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
+				
+    		if (tipo == TipoEnum.BACHE) {
+    			
+    			costo += costo*(0.3);
+    			
+    		} 
+    		else if (tipo == TipoEnum.CONGESTION) {
+    			
+    			costo += costo*(2);
+    			
+    		} 
+    		else if (tipo == TipoEnum.EVENTO) {
+    			
+    			costo += costo*(0.8);
+    			
+    		}
+    		
+    		return costo;
     }
 
     /**
