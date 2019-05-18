@@ -33,7 +33,6 @@ public class EntrarSupermercado extends SearchAction {
         	nextState.setUbicacion(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
         	nextState.setUbicacionAnterior(new Point(ubicacionAgente.x,ubicacionAgente.y));
         	
-        	//Ver si agregar costo/tiempo
         	return nextState;
         }
         
@@ -57,18 +56,13 @@ public class EntrarSupermercado extends SearchAction {
         	agState.setUbicacion(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
         	agState.setUbicacionAnterior(new Point(ubicacionAgente.x,ubicacionAgente.y));
         	
-        	//Ver si agregar costo/tiempo
         }
         
-        if (true) {
-            // Update the real world
-            
-            // Update the agent state
+                   
+        	environmentState.setUbicacionAgente(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
             
             return environmentState;
-        }
-
-        return null;
+        
     }
 
     /**

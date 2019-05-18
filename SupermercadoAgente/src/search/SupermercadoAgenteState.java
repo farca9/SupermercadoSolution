@@ -90,9 +90,28 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	
     	//El agente actualiza su lista de productos segun la percibida
     	
+    	//La nueva lista tiene siempre todos los elementos de la lista percibida.
     	HashMap<Producto,Boolean> listaProductosNew = new HashMap();
     	
     	for(Producto pPercibido : sap.getListaProductosPerception()) {
+    		listaProductosNew.put(new Producto(pPercibido.getId(),pPercibido.getNombre()), false);
+    	}
+    	
+    	for(Producto pInNew : listaProductosNew.keySet()) {
+    		
+    		for(Producto pInOld : this.ListaProductos.keySet()) {
+    			
+    			if(pInNew.equals(pInOld)) {
+    				listaProductosNew.put(pInNew, new Boolean(this.ListaProductos.get(pInOld).booleanValue()));
+    			}
+    			
+    		}
+    		
+    	}
+    	
+    	this.ListaProductos=listaProductosNew;
+    	
+    	/*for(Producto pPercibido : sap.getListaProductosPerception()) {
     		
     		if(this.ListaProductos.containsKey(pPercibido)) { //Si vino en percibido y ya esta, se copia el status
     			
@@ -108,7 +127,8 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     		
     	}
     	
-    	this.ListaProductos=listaProductosNew;
+    	this.ListaProductos=listaProductosNew;*/
+    	
     	
     	//El agente actualiza su matriz de producto comercio
     	this.MatrizProductoComercio=(ArrayList<ProductoComercio>)sap.getMatrizProductoComercioPerception();

@@ -37,17 +37,11 @@ public class SalirSupermercado extends SearchAction {
 
         Point ubicacionSuperAux = new Point (agState.getUbicacion().x,agState.getUbicacion().y);
         agState.setUbicacion(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
+        environmentState.setUbicacionAgente(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
+        
         agState.setUbicacionAnterior(new Point(ubicacionSuperAux.x,ubicacionSuperAux.y));
              
-        if (true) {
-            // Update the real world
-            
-            // Update the agent state
-            
-            return environmentState;
-        }
-
-        return null;
+        return environmentState;
     }
 
     /**

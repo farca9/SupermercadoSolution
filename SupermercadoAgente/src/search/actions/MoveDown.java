@@ -78,23 +78,14 @@ public class MoveDown extends SearchAction {
         			agState.setUbicacion(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
         			agState.setUbicacionAnterior(new Point(ubicacionPrevia.x, ubicacionPrevia.y));
         			
+        			environmentState.setUbicacionAgente(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
+        			return environmentState;
         		}
         		
         	}
         	
         }
 
-        // TODO: Use this conditions
-        // PreConditions: null
-        // PostConditions: null
-        
-        if (true) {
-            // Update the real world
-            
-            // Update the agent state
-            
-            return environmentState;
-        }
 
         return null;
     }

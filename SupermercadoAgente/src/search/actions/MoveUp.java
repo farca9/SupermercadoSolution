@@ -78,20 +78,15 @@ public class MoveUp extends SearchAction {
         			agState.setUbicacion(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
         			agState.setUbicacionAnterior(new Point(ubicacionPrevia.x, ubicacionPrevia.y));
         			
+        			environmentState.setUbicacionAgente(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
+        			return environmentState;
+        			
         		}
         		
         	}
         	
         }
         
-        
-        if (true) {
-            // Update the real world
-            
-            // Update the agent state
-            
-            return environmentState;
-        }
 
         return null;
     }

@@ -88,15 +88,7 @@ public class ComprarProducto extends SearchAction {
         	}
         }
         
-        if (true) {
-            // Update the real world
-            
-            // Update the agent state
-            
-            return environmentState;
-        }
-
-        return null;
+        return environmentState;
     }
 
     /**
