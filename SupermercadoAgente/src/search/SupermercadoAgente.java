@@ -29,13 +29,13 @@ public class SupermercadoAgente extends SearchBasedAgent {
 
         // Create the operators
         Vector<SearchAction> operators = new Vector<SearchAction>();
-        operators.addElement(new MoveDown());
-        operators.addElement(new MoveUp());		
-        operators.addElement(new MoveRight());	
-        operators.addElement(new MoveLeft());	
+        operators.addElement(new ComprarProducto());
         operators.addElement(new EntrarSupermercado());	
-        operators.addElement(new SalirSupermercado());	
-        operators.addElement(new ComprarProducto());	
+        operators.addElement(new SalirSupermercado());
+        operators.addElement(new MoveUp());	
+        operators.addElement(new MoveDown());	
+        operators.addElement(new MoveRight());	
+        operators.addElement(new MoveLeft());			
 
         // Create the Problem which the agent will resolve
         Problem problem = new Problem(agGoal, agState, operators);

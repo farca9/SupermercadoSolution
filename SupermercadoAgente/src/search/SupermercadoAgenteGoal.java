@@ -14,19 +14,21 @@ public class SupermercadoAgenteGoal extends GoalTest {
     
     	// TODO: Complete Method
     	
-    	/*for(Map.Entry<Producto,Boolean> entry : ((SupermercadoAgenteState)agentState).getListaProductos().entrySet()) {
-    		if(!entry.getValue()) return false;
-    	}*/
+    	for(Boolean b : ((SupermercadoAgenteState)agentState).getListaProductos().values()) {
+    		if(!b) {
+    			return false;
+    		}
+    	}
+    	return true;
     	
-    	//GOAL TEST
-    	/*if(!((SupermercadoAgenteState)agentState).getMatrizProductoComercio().get(0).getComercio().getUbicacion().equals(((SupermercadoAgenteState)agentState).getUbicacion())) {
+    	
+    	/*
+    	if(((SupermercadoAgenteState)agentState).getUbicacion().equals(new Point(3,1))) {
+    		return true;
+    	}else{
     		return false;
     	}*/
     	
-    	if(((SupermercadoAgenteState)agentState).getUbicacion().equals(new Point(3,1))) {
-    		return true;
-    	}
-    	
-        return false;
+        
 	}
 }
