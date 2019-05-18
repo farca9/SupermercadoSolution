@@ -24,7 +24,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     private	HashMap<Producto,Boolean> ListaProductos;
     private ArrayList<ProductoComercio> MatrizProductoComercio;
     private MapUnit[][] Mapa;
-	
+	private double costo = 0.0;
 
     public SupermercadoAgenteState() {
     
@@ -251,10 +251,36 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
 	public void setMapa(MapUnit[][] mapa) {
 		Mapa = mapa;
 	}
+    
+	// The following methods are agent-specific:
 
-    //TODO: Complete this section with agent-specific methods
-    // The following methods are agent-specific:
-   	
-     
+	public void calcularCosto() {
+		
+		TipoEnum tipo = getMapa()[getUbicacion().x][getUbicacion().y].getTipo();
+    			
+		costo +=  getMapa()[getUbicacion().x][getUbicacion().y].getCosto();
+				
+    		if (tipo == TipoEnum.BACHE) {
+    			
+    			costo += costo*(0.3);
+    			
+    		} 
+    		else if (tipo == TipoEnum.CONGESTION) {
+    			
+    			costo += costo*(2);
+    			
+    		} 
+    		else if (tipo == TipoEnum.EVENTO) {
+    			
+    			costo += costo*(0.8);
+    			
+    		}
+		
+	}
+	
+	public double getCosto() {
+		return costo;
+	}
+	
 }
 

@@ -33,24 +33,7 @@ public class MoveDown extends SearchAction {
         		TipoEnum tipo = unitDown.getTipo();
         		
         		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
-        			
-        			if(tipo == TipoEnum.CALLENORMAL) {
-            			
-        				//ningun cambio costo/tiempo
-        				
-            		} else if (tipo == TipoEnum.BACHE) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		} else if (tipo == TipoEnum.CONGESTION) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		} else if (tipo == TipoEnum.EVENTO) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		}
+        			nextState.calcularCosto();
         			
         			//Se realiza el movimiento y se devuelve el nuevo estado
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x, nextState.getUbicacion().y-1));
@@ -86,24 +69,7 @@ public class MoveDown extends SearchAction {
         		TipoEnum tipo = unitDown.getTipo();
         		
         		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
-        			
-        			if(tipo == TipoEnum.CALLENORMAL) {
-            			
-        				//ningun cambio costo/tiempo
-        				
-            		} else if (tipo == TipoEnum.BACHE) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		} else if (tipo == TipoEnum.CONGESTION) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		} else if (tipo == TipoEnum.EVENTO) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		}
+        			agState.calcularCosto();
         			
         			//Se realiza el movimiento y se devuelve el nuevo estado
         			Point nuevaUbicacion = new Point(agState.getUbicacion().x, agState.getUbicacion().y-1);

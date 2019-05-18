@@ -23,8 +23,7 @@ public class MoveLeft extends SearchAction {
         SupermercadoAgenteState nextState = agState.clone();
         
         Point ubicacionAgente = agState.getUbicacion();
-        
-        
+
         if(ubicacionAgente.x > 0) { //No esta en el borde
         	MapUnit unitLeft = agState.getMapa()[ubicacionAgente.x-1][ubicacionAgente.y];
         	MapUnit thisUnit = agState.getMapa()[ubicacionAgente.x][ubicacionAgente.y];
@@ -33,28 +32,13 @@ public class MoveLeft extends SearchAction {
         		TipoEnum tipo = unitLeft.getTipo();
         		
         		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
-        			
-        			if(tipo == TipoEnum.CALLENORMAL) {
-            			
-        				//ningun cambio costo/tiempo
-        				
-            		} else if (tipo == TipoEnum.BACHE) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		} else if (tipo == TipoEnum.CONGESTION) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		} else if (tipo == TipoEnum.EVENTO) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		}
-        			
         			//Se realiza el movimiento y se devuelve el nuevo estado
+        			
+        			nextState.calcularCosto();
+        			
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x-1, nextState.getUbicacion().y));
         			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
+        		
         			
         			return nextState;
         		}
@@ -82,35 +66,20 @@ public class MoveLeft extends SearchAction {
         	MapUnit unitLeft = agState.getMapa()[ubicacionAgente.x-1][ubicacionAgente.y];
         	MapUnit thisUnit = agState.getMapa()[ubicacionAgente.x][ubicacionAgente.y];
         	
-        	if(thisUnit.isUp()) {
+        	if(thisUnit.isLeft()) {
         		TipoEnum tipo = unitLeft.getTipo();
         		
         		if(tipo!=TipoEnum.CALLECORTADA && tipo!=TipoEnum.MANZANA && tipo!=TipoEnum.SUPERMERCADO && tipo!=TipoEnum.SUPERMERCADOCERRADO) {
-        			
-        			if(tipo == TipoEnum.CALLENORMAL) {
-            			
-        				//ningun cambio costo/tiempo
-        				
-            		} else if (tipo == TipoEnum.BACHE) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		} else if (tipo == TipoEnum.CONGESTION) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		} else if (tipo == TipoEnum.EVENTO) {
-            			
-            			//alguna modificacion de costo/tiempo segun TipoEnum
-            			
-            		}
+        			agState.calcularCosto();
         			
         			//Se realiza el movimiento y se devuelve el nuevo estado
         			Point nuevaUbicacion = new Point(agState.getUbicacion().x-1, agState.getUbicacion().y);
         			Point ubicacionPrevia = new Point(agState.getUbicacion().x, agState.getUbicacion().y);
-        			
+
         			agState.setUbicacion(new Point(nuevaUbicacion.x, nuevaUbicacion.y));
         			agState.setUbicacionAnterior(new Point(ubicacionPrevia.x, ubicacionPrevia.y));
+        			
+        			
         			
         		}
         		

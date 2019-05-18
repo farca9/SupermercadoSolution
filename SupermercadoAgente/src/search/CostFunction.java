@@ -10,9 +10,8 @@ public class CostFunction implements IStepCostFunction {
      */
     @Override
     public double calculateCost(NTree node) {
+    	
+        return (((SupermercadoAgenteState) node.getAgentState()).getCosto());
         
-        //TODO: Complete Method
-        
-        return 0;
     }
 }
