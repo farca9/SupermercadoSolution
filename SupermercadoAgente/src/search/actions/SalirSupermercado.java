@@ -10,7 +10,7 @@ import search.SupermercadoAgenteState;
 import search.SupermercadoEnvironmentState;
 
 public class SalirSupermercado extends SearchAction {
-
+	private static SupermercadoAgenteState state;
     /**
      * This method updates a tree node state when the search process is running.
      * It does not updates the real world state.
@@ -19,10 +19,13 @@ public class SalirSupermercado extends SearchAction {
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
         
+        state = (SupermercadoAgenteState) s;
+        
         //TODO ver si evaluar algunas condiciones con respecto a la ubicacion anterior (por si aparece algun corte mientras esta comprando)
         Point ubicacionSuperAux = new Point (agState.getUbicacion().x,agState.getUbicacion().y);
         agState.setUbicacion(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
         agState.setUbicacionAnterior(new Point(ubicacionSuperAux.x,ubicacionSuperAux.y));
+        agState.setCosto(getCost()); 
         
         return agState;
     }
@@ -34,13 +37,16 @@ public class SalirSupermercado extends SearchAction {
     public EnvironmentState execute(AgentState ast, EnvironmentState est) {
         SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
+        
+        state = (SupermercadoAgenteState) ast;
 
         Point ubicacionSuperAux = new Point (agState.getUbicacion().x,agState.getUbicacion().y);
         agState.setUbicacion(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
         environmentState.setUbicacionAgente(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
         
         agState.setUbicacionAnterior(new Point(ubicacionSuperAux.x,ubicacionSuperAux.y));
-             
+        agState.setCosto(getCost());     
+        
         return environmentState;
     }
 
@@ -49,7 +55,9 @@ public class SalirSupermercado extends SearchAction {
      */
     @Override
     public Double getCost() {
-        return new Double(0);
+    	double costo = 0.0;
+    	costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
+        return costo;
     }
 
     /**
