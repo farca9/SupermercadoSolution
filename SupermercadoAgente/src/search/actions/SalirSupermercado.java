@@ -8,6 +8,7 @@ import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.state.EnvironmentState;
 import search.SupermercadoAgenteState;
 import search.SupermercadoEnvironmentState;
+import search.util.TipoEnum;
 
 public class SalirSupermercado extends SearchAction {
 
@@ -17,14 +18,23 @@ public class SalirSupermercado extends SearchAction {
      */
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
-        SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
+    	
+    	
+    	SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
         
-        //TODO ver si evaluar algunas condiciones con respecto a la ubicacion anterior (por si aparece algun corte mientras esta comprando)
-        Point ubicacionSuperAux = new Point (agState.getUbicacion().x,agState.getUbicacion().y);
-        agState.setUbicacion(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
-        agState.setUbicacionAnterior(new Point(ubicacionSuperAux.x,ubicacionSuperAux.y));
-        
-        return agState;
+    	if(agState.getMapa()[agState.getUbicacion().x][agState.getUbicacion().y].getTipo()==TipoEnum.SUPERMERCADO) {
+            //TODO ver si evaluar algunas condiciones con respecto a la ubicacion anterior (por si aparece algun corte mientras esta comprando)
+            Point ubicacionSuperAux = new Point (agState.getUbicacion().x,agState.getUbicacion().y);
+            agState.setUbicacion(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
+            agState.setUbicacionAnterior(new Point(ubicacionSuperAux.x,ubicacionSuperAux.y));
+            
+            System.out.println(this.toString());
+            
+            return agState;
+    	}
+    	
+    	return null;
+
     }
 
     /**
@@ -35,6 +45,8 @@ public class SalirSupermercado extends SearchAction {
         SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
 
+        if(agState.getMapa()[agState.getUbicacion().x][agState.getUbicacion().y].getTipo()==TipoEnum.SUPERMERCADO) {
+        
         Point ubicacionSuperAux = new Point (agState.getUbicacion().x,agState.getUbicacion().y);
         agState.setUbicacion(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
         environmentState.setUbicacionAgente(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
@@ -42,6 +54,9 @@ public class SalirSupermercado extends SearchAction {
         agState.setUbicacionAnterior(new Point(ubicacionSuperAux.x,ubicacionSuperAux.y));
              
         return environmentState;
+        }
+        
+        return null;
     }
 
     /**

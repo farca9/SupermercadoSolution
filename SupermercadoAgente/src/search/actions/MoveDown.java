@@ -38,7 +38,6 @@ public class MoveDown extends SearchAction {
         			//Se realiza el movimiento y se devuelve el nuevo estado
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x, nextState.getUbicacion().y-1));
         			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
-        			
         			return nextState;
         		}
         		
@@ -56,6 +55,8 @@ public class MoveDown extends SearchAction {
      */
     @Override
     public EnvironmentState execute(AgentState ast, EnvironmentState est) {
+    	
+    	
     	SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
 

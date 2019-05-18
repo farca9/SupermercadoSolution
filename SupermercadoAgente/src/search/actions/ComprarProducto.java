@@ -19,7 +19,9 @@ public class ComprarProducto extends SearchAction {
      */
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
-        SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
+    	
+    	
+    	SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
         
         MapUnit ubicacionActual = agState.getMapa()[agState.getUbicacion().x][agState.getUbicacion().y];
         Point coordinadas = new Point(agState.getUbicacion().x,agState.getUbicacion().y);
@@ -41,6 +43,9 @@ public class ComprarProducto extends SearchAction {
             				
             				//Compro el producto
             				producto.setValue(true);
+            				
+            				System.out.println(this.toString());
+            				
             				return agState;
             				//agState.setMontoGastado(agState.getMontoGastado() + pc.getCosto());
             			}

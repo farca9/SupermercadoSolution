@@ -22,7 +22,8 @@ public class EntrarSupermercado extends SearchAction {
      */
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
-        SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
+    	
+    	SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
         SupermercadoAgenteState nextState = agState.clone();
         
         Point ubicacionAgente = agState.getUbicacion();
@@ -32,6 +33,9 @@ public class EntrarSupermercado extends SearchAction {
         	
         	nextState.setUbicacion(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
         	nextState.setUbicacionAnterior(new Point(ubicacionAgente.x,ubicacionAgente.y));
+        	
+        	System.out.println(this.toString());
+        	
         	
         	return nextState;
         }
@@ -56,12 +60,15 @@ public class EntrarSupermercado extends SearchAction {
         	agState.setUbicacion(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
         	agState.setUbicacionAnterior(new Point(ubicacionAgente.x,ubicacionAgente.y));
         	
-        }
-        
-                   
-        	environmentState.setUbicacionAgente(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
+    		environmentState.setUbicacionAgente(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
             
             return environmentState;
+        	
+        }
+        
+        return null;
+                   
+        	
         
     }
 

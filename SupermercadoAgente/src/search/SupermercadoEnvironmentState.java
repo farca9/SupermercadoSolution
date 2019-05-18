@@ -78,6 +78,122 @@ public class SupermercadoEnvironmentState extends EnvironmentState {
     	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 5.0));
     	MatrizProductoComercio.add(new ProductoComercio(p2, kilbel, 3.0));
     	
+    	/*
+		Mapa = new MapUnit[10][6];
+    	
+		Mapa[0][0]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, true, false, false);
+    	Mapa[0][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, true, true);
+    	Mapa[0][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, false, false);
+    	Mapa[0][3]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, true, true);
+    	Mapa[0][4]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, false, false);
+    	Mapa[0][5]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, true, true);
+    	
+    	Mapa[1][0]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[1][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	Mapa[1][2]= new MapUnit(TipoEnum.SUPERMERCADO, 1, 1, false, false, false, false);
+    	Mapa[1][3]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	Mapa[1][4]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[1][5]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	
+    	Mapa[2][0]= new MapUnit(TipoEnum.MANZANA, 1, 1, true, false, false, false);
+    	Mapa[2][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, true, true);
+    	Mapa[2][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, false);
+    	Mapa[2][3]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, true, true);
+    	Mapa[2][4]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, false);
+    	Mapa[2][5]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, true, true);
+    	
+    	Mapa[3][0]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[3][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	Mapa[3][2]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[3][3]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	Mapa[3][4]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[3][5]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	
+    	Mapa[4][0]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, true, false, false);
+    	Mapa[4][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, true, true);
+    	Mapa[4][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, false, false);
+    	Mapa[4][3]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, true, true);
+    	Mapa[4][4]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, false, false);
+    	Mapa[4][5]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, true, true);
+    	
+    	Mapa[5][0]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[5][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	Mapa[5][2]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[5][3]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	Mapa[5][4]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[5][5]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false,true, true);
+    	
+    	Mapa[6][0]= new MapUnit(TipoEnum.MANZANA, 1, 1, true, false, false, false);
+    	Mapa[6][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, true, true);
+    	Mapa[6][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, false);
+    	Mapa[6][3]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, true, true);
+    	Mapa[6][4]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, false);
+    	Mapa[6][5]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, true, true);
+    	
+    	Mapa[7][0]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[7][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	Mapa[7][2]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[7][3]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	Mapa[7][4]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[7][5]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	
+    	Mapa[8][0]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, true, false, false);
+    	Mapa[8][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, true, true);
+    	Mapa[8][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, false, false);
+    	Mapa[8][3]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, true, true);
+    	Mapa[8][4]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, false, false);
+    	Mapa[8][5]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, true, true);
+    	
+    	Mapa[9][0]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[9][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false,true, true);
+    	Mapa[9][2]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[9][3]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	Mapa[9][4]= new MapUnit(TipoEnum.MANZANA, 1, 1, false, false, false, false);
+    	Mapa[9][5]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, true, true);
+    	
+    	
+    	//Ubicacion Inicial
+    	this.UbicacionAgente=new Point(2,2);
+    	
+    	//Producto(s)
+    	Producto p1 = new Producto(1,"Huevos");
+    	Producto p2 = new Producto(2,"Pan");
+    	Producto p3 = new Producto(3,"Queso");
+    	Producto p4 = new Producto(4,"Salamin");
+    	Producto p5 = new Producto(5,"Leche");
+    	Producto p6 = new Producto(6,"Papa");
+    	
+    	//Comercio(s)
+    	Comercio alvear = new Comercio(1,"Alvear", new Point(1,2));
+    	Comercio kilbel = new Comercio(2,"Kilbel", new Point(7,4));
+    	Comercio patricia = new Comercio(3,"Patricia", new Point(7,2));
+    	
+    	//Lista productos
+    	this.ListaProductos=new ArrayList();
+    	ListaProductos.add(p1);
+    	ListaProductos.add(p2);
+    	//ListaProductos.add(p3);
+    	//ListaProductos.add(p4);
+    	//ListaProductos.add(p5);
+    	//ListaProductos.add(p6);
+    	
+    	
+    	//Matriz producto comercio
+    	this.MatrizProductoComercio=new ArrayList();
+    	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 5.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p2, alvear, 2.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p5, alvear, 10.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p3, alvear, 100.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p2, kilbel, 3.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p6, kilbel, 12.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p4, kilbel, 20.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p5, kilbel, 50.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p3, patricia, 95.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p6, patricia, 14.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p4, patricia, 18.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p1, patricia, 4.0));
+    	*/
+    	
     }
 
     /**

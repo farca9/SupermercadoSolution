@@ -19,7 +19,9 @@ public class MoveRight extends SearchAction {
      */
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
-        SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
+    	
+    	
+    	SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
         SupermercadoAgenteState nextState = agState.clone();
         
         Point ubicacionAgente = agState.getUbicacion();
@@ -38,7 +40,6 @@ public class MoveRight extends SearchAction {
         			//Se realiza el movimiento y se devuelve el nuevo estado
         			nextState.setUbicacion(new Point(nextState.getUbicacion().x+1, nextState.getUbicacion().y));
         			nextState.setUbicacionAnterior(new Point(agState.getUbicacion().x, agState.getUbicacion().y));
-        			
         			return nextState;
         		}
         		
