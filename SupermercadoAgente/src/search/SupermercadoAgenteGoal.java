@@ -22,8 +22,8 @@ public class SupermercadoAgenteGoal extends GoalTest {
     	return true;
     	
     	
-    	/*
-    	if(((SupermercadoAgenteState)agentState).getUbicacion().equals(new Point(3,1))) {
+    	
+    	/*if(((SupermercadoAgenteState)agentState).getUbicacion().equals(new Point(3,1))) {
     		return true;
     	}else{
     		return false;

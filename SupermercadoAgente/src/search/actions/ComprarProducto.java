@@ -41,6 +41,7 @@ public class ComprarProducto extends SearchAction {
             				
             				//Compro el producto
             				producto.setValue(true);
+            				return agState;
             				//agState.setMontoGastado(agState.getMontoGastado() + pc.getCosto());
             			}
         			}		
@@ -48,8 +49,8 @@ public class ComprarProducto extends SearchAction {
         	}
         }
         
+        return null;
         
-        return agState;
     }
 
     /**
