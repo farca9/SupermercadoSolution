@@ -35,10 +35,10 @@ public class SalirSupermercado extends SearchAction {
         SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
 
-        // TODO: Use this conditions
-        // PreConditions: null
-        // PostConditions: null
-        
+        Point ubicacionSuperAux = new Point (agState.getUbicacion().x,agState.getUbicacion().y);
+        agState.setUbicacion(new Point(agState.getUbicacionAnterior().x,agState.getUbicacionAnterior().y));
+        agState.setUbicacionAnterior(new Point(ubicacionSuperAux.x,ubicacionSuperAux.y));
+             
         if (true) {
             // Update the real world
             

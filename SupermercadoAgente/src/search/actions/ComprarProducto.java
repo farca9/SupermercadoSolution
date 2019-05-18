@@ -22,6 +22,7 @@ public class ComprarProducto extends SearchAction {
         SupermercadoAgenteState agState = (SupermercadoAgenteState) s;
         
         MapUnit ubicacionActual = agState.getMapa()[agState.getUbicacion().x][agState.getUbicacion().y];
+        Point coordinadas = new Point(agState.getUbicacion().x,agState.getUbicacion().y);
         
         //Chequeo que estoy en un supermercado
         if(ubicacionActual.getTipo() == TipoEnum.SUPERMERCADO) {
@@ -33,7 +34,7 @@ public class ComprarProducto extends SearchAction {
         		for(ProductoComercio pc : agState.getMatrizProductoComercio()) {
         			
         			//Chequeo que efectivamente el agente esta en un comercio de la Matriz
-        			if(ubicacionActual.equals(pc.getComercio().getUbicacion())) {
+        			if(coordinadas.equals(pc.getComercio().getUbicacion())) {
         				
         				//Chequeo si en el supermercado actual está el producto que busco
             			if(producto.getKey().equals(pc.getProducto())) {
@@ -59,9 +60,32 @@ public class ComprarProducto extends SearchAction {
         SupermercadoEnvironmentState environmentState = (SupermercadoEnvironmentState) est;
         SupermercadoAgenteState agState = ((SupermercadoAgenteState) ast);
 
-        // TODO: Use this conditions
-        // PreConditions: null
-        // PostConditions: null
+        MapUnit ubicacionActual = agState.getMapa()[agState.getUbicacion().x][agState.getUbicacion().y];
+        Point coordinadas = new Point(agState.getUbicacion().x,agState.getUbicacion().y);
+        
+        //Chequeo que estoy en un supermercado
+        if(ubicacionActual.getTipo() == TipoEnum.SUPERMERCADO) {
+        	
+        	//Recorro todos los productos de la lista
+        	for(Map.Entry<Producto,Boolean> producto : agState.getListaProductos().entrySet()) {
+        		
+        		//Recorro todos los productos de la matriz
+        		for(ProductoComercio pc : agState.getMatrizProductoComercio()) {
+        			
+        			//Chequeo que efectivamente el agente esta en un comercio de la Matriz
+        			if(coordinadas.equals(pc.getComercio().getUbicacion())) {
+        				
+        				//Chequeo si en el supermercado actual está el producto que busco
+            			if(producto.getKey().equals(pc.getProducto())) {
+            				
+            				//Compro el producto
+            				producto.setValue(true);
+            				//agState.setMontoGastado(agState.getMontoGastado() + pc.getCosto());
+            			}
+        			}		
+            	}
+        	}
+        }
         
         if (true) {
             // Update the real world

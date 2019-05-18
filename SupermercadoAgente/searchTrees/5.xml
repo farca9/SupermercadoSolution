@@ -433,4 +433,84 @@
 - Ubicacion Anterior: (2,1)
 - Lista Productos: {<1 , Huevos> =false}
 - MatrizProductoComercio:
-  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoSalirSupermercado></Nodonull>
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoSalirSupermercado></Nodonull><Nodonull>Id="0" Action="null" 
+- Ubicacion Actual: (3,1)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]<NodoEntrarSupermercado>Id="1" Action="EntrarSupermercado" 
+- Ubicacion Actual: (3,1)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoEntrarSupermercado><NodoSalirSupermercado>Id="2" Action="SalirSupermercado" 
+- Ubicacion Actual: (2,2)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoSalirSupermercado><NodoMoveUp>Id="3" Action="MoveUp" 
+- Ubicacion Actual: (2,2)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoMoveUp></Nodonull><Nodonull>Id="0" Action="null" 
+- Ubicacion Actual: (3,1)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]<NodoEntrarSupermercado>Id="1" Action="EntrarSupermercado" 
+- Ubicacion Actual: (3,1)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoEntrarSupermercado><NodoSalirSupermercado>Id="2" Action="SalirSupermercado" 
+- Ubicacion Actual: (2,2)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoSalirSupermercado><NodoMoveUp>Id="3" Action="MoveUp" 
+- Ubicacion Actual: (2,2)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoMoveUp></Nodonull><Nodonull>Id="0" Action="null" 
+- Ubicacion Actual: (3,1)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]<NodoEntrarSupermercado>Id="1" Action="EntrarSupermercado" 
+- Ubicacion Actual: (3,1)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoEntrarSupermercado><NodoSalirSupermercado>Id="2" Action="SalirSupermercado" 
+- Ubicacion Actual: (2,2)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoSalirSupermercado><NodoMoveUp>Id="3" Action="MoveUp" 
+- Ubicacion Actual: (2,2)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoMoveUp></Nodonull><Nodonull>Id="0" Action="null" 
+- Ubicacion Actual: (3,1)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]<NodoEntrarSupermercado>Id="1" Action="EntrarSupermercado" 
+- Ubicacion Actual: (3,1)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoEntrarSupermercado><NodoSalirSupermercado>Id="2" Action="SalirSupermercado" 
+- Ubicacion Actual: (2,2)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoSalirSupermercado><NodoMoveUp>Id="3" Action="MoveUp" 
+- Ubicacion Actual: (2,2)
+- Ubicacion Anterior: (2,1)
+- Lista Productos: {<1 , Huevos> =false}
+- MatrizProductoComercio:
+  [<<1 , Huevos>  , 5.0 , <1,Alvear,(3,1)>> ]</NodoMoveUp></Nodonull>
