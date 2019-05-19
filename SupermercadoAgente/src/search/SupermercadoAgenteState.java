@@ -113,7 +113,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	
     	
     	//El agente actualiza su matriz de producto comercio
-    	//this.MatrizProductoComercio=(ArrayList<ProductoComercio>)sap.getMatrizProductoComercioPerception();
+    	this.MatrizProductoComercio=(ArrayList<ProductoComercio>)sap.getMatrizProductoComercioPerception();
     	
     }
 
@@ -155,14 +155,14 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 10.0));
     	
     	//Ubicacion Inicial
-    	this.Ubicacion=new Point(7,3);
-    	this.UbicacionAnterior=new Point(7,3);
+    	this.Ubicacion=new Point(5,14);
+    	this.UbicacionAnterior=new Point(5,14);
     	
     	//Cargar el mapa
     	Mapa = new MapUnit[10][17];
     	
-    	int normalCost = 10;
-    	int normalTime = 10;
+    	int normalCost = 5;
+    	int normalTime = 5;
     	int help=0;
     	
     	//0

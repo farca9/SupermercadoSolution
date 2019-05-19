@@ -1,97 +1,211 @@
 <tree id="14" edgedefault="directed">
 <node Id="0" Action="null" Cost="0.0" Estado_Agente="
-- Ubicacion Actual: (5,6)
-- Lista Productos: {Pan=true, Queso=false, Huevos=true}
+- Ubicacion Actual: (1,11)
+- Lista Productos: {Huevos=false, Queso=true, Pan=true}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="1" Action="MoveUp" Cost="13.16227766016838" Estado_Agente="
-- Ubicacion Actual: (5,6)
-- Lista Productos: {Huevos=true, Queso=false, Pan=true}
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="1" Action="MoveUp" Cost="6.414213562373095" Estado_Agente="
+- Ubicacion Actual: (1,13)
+- Lista Productos: {Queso=true, Pan=true, Huevos=false}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="2" Action="MoveUp" Cost="26.162277660168378" Estado_Agente="
-- Ubicacion Actual: (5,7)
-- Lista Productos: {Queso=false, Huevos=true, Pan=true}
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="2" Action="MoveDown" Cost="8.16227766016838" Estado_Agente="
+- Ubicacion Actual: (1,11)
+- Lista Productos: {Pan=true, Queso=true, Huevos=false}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="3" Action="MoveLeft" Cost="25.398345637668168" Estado_Agente="
-- Ubicacion Actual: (4,6)
-- Lista Productos: {Pan=true, Queso=false, Huevos=true}
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="3" Action="MoveRight" Cost="7.82842712474619" Estado_Agente="
+- Ubicacion Actual: (2,12)
+- Lista Productos: {Queso=true, Pan=true, Huevos=false}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="5" Action="MoveUp" Cost="39.324555320336756" Estado_Agente="
-- Ubicacion Actual: (5,8)
-- Lista Productos: {Pan=true, Huevos=true, Queso=false}
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="4" Action="MoveUp" Cost="12.414213562373096" Estado_Agente="
+- Ubicacion Actual: (1,14)
+- Lista Productos: {Queso=true, Huevos=false, Pan=true}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="8" Action="MoveUp" Cost="52.930106595800744" Estado_Agente="
-- Ubicacion Actual: (5,9)
-- Lista Productos: {Queso=false, Pan=true, Huevos=true}
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="7" Action="MoveUp" Cost="18.82842712474619" Estado_Agente="
+- Ubicacion Actual: (1,15)
+- Lista Productos: {Pan=true, Huevos=false, Queso=true}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="9" Action="MoveRight" Cost="53.44766094595442" Estado_Agente="
-- Ubicacion Actual: (6,8)
-- Lista Productos: {Queso=false, Pan=true, Huevos=true}
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="8" Action="MoveRight" Cost="19.414213562373096" Estado_Agente="
+- Ubicacion Actual: (2,14)
+- Lista Productos: {Huevos=false, Queso=true, Pan=true}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="13" Action="MoveUp" Cost="67.17274728292003" Estado_Agente="
-- Ubicacion Actual: (5,10)
-- Lista Productos: {Huevos=true, Queso=false, Pan=true}
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="12" Action="MoveUp" Cost="26.06449510224598" Estado_Agente="
+- Ubicacion Actual: (1,16)
+- Lista Productos: {Huevos=false, Pan=true, Queso=true}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="14" Action="MoveRight" Cost="68.5466804595472" Estado_Agente="
-- Ubicacion Actual: (7,8)
-- Lista Productos: {Queso=false, Huevos=true, Pan=true}
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="17" Action="MoveLeft" Cost="33.064495102245985" Estado_Agente="
+- Ubicacion Actual: (0,16)
+- Lista Productos: {Huevos=false, Queso=true, Pan=true}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="4" Action="MoveLeft" Cost="36.812559200041264" Estado_Agente="
-- Ubicacion Actual: (3,6)
-- Lista Productos: {Pan=true, Queso=false, Huevos=true}
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="13" Action="MoveRight" Cost="27.414213562373096" Estado_Agente="
+- Ubicacion Actual: (3,14)
+- Lista Productos: {Pan=true, Huevos=false, Queso=true}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="6" Action="MoveDown" Cost="49.04862717754105" Estado_Agente="
-- Ubicacion Actual: (3,5)
-- Lista Productos: {Huevos=true, Queso=false, Pan=true}
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="18" Action="MoveDown" Cost="35.57649122254147" Estado_Agente="
+- Ubicacion Actual: (3,13)
+- Lista Productos: {Pan=true, Queso=true, Huevos=false}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="7" Action="MoveLeft" Cost="47.812559200041264" Estado_Agente="
-- Ubicacion Actual: (2,6)
-- Lista Productos: {Pan=true, Queso=false, Huevos=true}
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="19" Action="MoveRight" Cost="36.41421356237309" Estado_Agente="
+- Ubicacion Actual: (4,14)
+- Lista Productos: {Huevos=false, Pan=true, Queso=true}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="12" Action="MoveDown" Cost="62.21090483770943" Estado_Agente="
-- Ubicacion Actual: (3,4)
-- Lista Productos: {Huevos=true, Queso=false, Pan=true}
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="24" Action="MoveDown" Cost="44.18204249800546" Estado_Agente="
+- Ubicacion Actual: (3,12)
+- Lista Productos: {Pan=true, Queso=true, Huevos=false}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="10" Action="EntrarSupermercado" Cost="57.812559200041264" Estado_Agente="
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="31" Action="MoveRight" Cost="46.41421356237309" Estado_Agente="
+- Ubicacion Actual: (5,14)
+- Lista Productos: {Pan=true, Queso=true, Huevos=false}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="6" Action="MoveDown" Cost="16.32455532033676" Estado_Agente="
+- Ubicacion Actual: (1,10)
+- Lista Productos: {Queso=true, Huevos=false, Pan=true}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="9" Action="MoveDown" Cost="23.56062329783655" Estado_Agente="
+- Ubicacion Actual: (1,9)
+- Lista Productos: {Huevos=false, Queso=true, Pan=true}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="14" Action="MoveDown" Cost="29.974836860209646" Estado_Agente="
+- Ubicacion Actual: (1,8)
+- Lista Productos: {Queso=true, Pan=true, Huevos=false}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="20" Action="MoveDown" Cost="35.97483686020965" Estado_Agente="
+- Ubicacion Actual: (1,7)
+- Lista Productos: {Queso=true, Huevos=false, Pan=true}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="21" Action="MoveRight" Cost="35.97483686020965" Estado_Agente="
+- Ubicacion Actual: (2,8)
+- Lista Productos: {Pan=true, Huevos=false, Queso=true}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="25" Action="EntrarSupermercado" Cost="40.97483686020965" Estado_Agente="
 - Ubicacion Actual: (2,7)
-- Lista Productos: {Queso=false, Huevos=true, Pan=true}
+- Lista Productos: {Queso=true, Pan=true, Huevos=false}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="11" Action="MoveLeft" Cost="59.226772762414356" Estado_Agente="
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="26" Action="MoveDown" Cost="42.38905042258274" Estado_Agente="
 - Ubicacion Actual: (1,6)
-- Lista Productos: {Pan=true, Queso=false, Huevos=true}
+- Lista Productos: {Queso=true, Huevos=false, Pan=true}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
-<node Id="15" Action="ComprarProducto" Cost="57.912559200041265" Estado_Agente="
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="33" Action="ComprarProducto" Cost="41.07483686020965" Estado_Agente="
 - Ubicacion Actual: (2,7)
-- Lista Productos: {Queso=true, Pan=true, Huevos=true}
+- Lista Productos: {Queso=true, Huevos=true, Pan=true}
 - MatrizProductoComercio:
-  [&lt;Huevos , 5.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 2.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 3.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="27" Action="EntrarSupermercado" Cost="40.97483686020965" Estado_Agente="
+- Ubicacion Actual: (2,7)
+- Lista Productos: {Pan=true, Queso=true, Huevos=false}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="28" Action="MoveRight" Cost="42.38905042258274" Estado_Agente="
+- Ubicacion Actual: (3,8)
+- Lista Productos: {Pan=true, Huevos=false, Queso=true}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="34" Action="ComprarProducto" Cost="41.07483686020965" Estado_Agente="
+- Ubicacion Actual: (2,7)
+- Lista Productos: {Huevos=true, Queso=true, Pan=true}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="5" Action="MoveRight" Cost="16.43397840021018" Estado_Agente="
+- Ubicacion Actual: (3,12)
+- Lista Productos: {Pan=true, Queso=true, Huevos=false}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="10" Action="MoveDown" Cost="25.55708402582784" Estado_Agente="
+- Ubicacion Actual: (3,11)
+- Lista Productos: {Huevos=false, Pan=true, Queso=true}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="11" Action="MoveRight" Cost="25.90611435520976" Estado_Agente="
+- Ubicacion Actual: (4,12)
+- Lista Productos: {Huevos=false, Pan=true, Queso=true}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="15" Action="MoveDown" Cost="33.71936168599622" Estado_Agente="
+- Ubicacion Actual: (3,10)
+- Lista Productos: {Pan=true, Huevos=false, Queso=true}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="22" Action="MoveDown" Cost="40.955429663496005" Estado_Agente="
+- Ubicacion Actual: (3,9)
+- Lista Productos: {Pan=true, Queso=true, Huevos=false}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="23" Action="MoveLeft" Cost="41.71936168599622" Estado_Agente="
+- Ubicacion Actual: (2,10)
+- Lista Productos: {Huevos=false, Queso=true, Pan=true}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="32" Action="MoveDown" Cost="47.3696432258691" Estado_Agente="
+- Ubicacion Actual: (3,8)
+- Lista Productos: {Queso=true, Pan=true, Huevos=false}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="16" Action="MoveRight" Cost="36.29127916234426" Estado_Agente="
+- Ubicacion Actual: (5,12)
+- Lista Productos: {Huevos=false, Pan=true, Queso=true}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="29" Action="MoveUp" Cost="46.390298675937046" Estado_Agente="
+- Ubicacion Actual: (5,13)
+- Lista Productos: {Pan=true, Queso=true, Huevos=false}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
+<node Id="30" Action="MoveRight" Cost="47.61583448268102" Estado_Agente="
+- Ubicacion Actual: (6,12)
+- Lista Productos: {Huevos=false, Pan=true, Queso=true}
+- MatrizProductoComercio:
+  [&lt;Huevos , 7.0 , Patricia&gt; , &lt;Pan , 10.0 , Patricia&gt; , &lt;Pan , 7.0 , Kilbel&gt; , &lt;Queso , 10.0 , Kilbel&gt; , &lt;Queso , 7.0 , Alvear&gt; , &lt;Huevos , 10.0 , Alvear&gt; ]"/>
 <edge source="0" target="1"/>
-<edge source="1" target="2"/>
-<edge source="1" target="3"/>
-<edge source="2" target="5"/>
-<edge source="3" target="4"/>
-<edge source="5" target="8"/>
-<edge source="5" target="9"/>
-<edge source="8" target="13"/>
-<edge source="9" target="14"/>
-<edge source="4" target="6"/>
+<edge source="0" target="2"/>
+<edge source="0" target="3"/>
+<edge source="1" target="4"/>
+<edge source="2" target="6"/>
+<edge source="3" target="5"/>
 <edge source="4" target="7"/>
-<edge source="6" target="12"/>
-<edge source="7" target="10"/>
-<edge source="7" target="11"/>
+<edge source="4" target="8"/>
+<edge source="7" target="12"/>
+<edge source="8" target="13"/>
+<edge source="12" target="17"/>
+<edge source="13" target="18"/>
+<edge source="13" target="19"/>
+<edge source="18" target="24"/>
+<edge source="19" target="31"/>
+<edge source="6" target="9"/>
+<edge source="9" target="14"/>
+<edge source="14" target="20"/>
+<edge source="14" target="21"/>
+<edge source="20" target="25"/>
+<edge source="20" target="26"/>
+<edge source="21" target="27"/>
+<edge source="21" target="28"/>
+<edge source="25" target="33"/>
+<edge source="27" target="34"/>
+<edge source="5" target="10"/>
+<edge source="5" target="11"/>
 <edge source="10" target="15"/>
+<edge source="11" target="16"/>
+<edge source="15" target="22"/>
+<edge source="15" target="23"/>
+<edge source="22" target="32"/>
+<edge source="16" target="29"/>
+<edge source="16" target="30"/>
 </tree>

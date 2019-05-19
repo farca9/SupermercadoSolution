@@ -104,21 +104,21 @@ public class SupermercadoEnvironmentState extends EnvironmentState {
     	
     	//Matriz producto comercio
     	this.MatrizProductoComercio=new ArrayList();
-    	MatrizProductoComercio.add(new ProductoComercio(p1, patricia, 5.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p2, patricia, 100.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p2, kilbel, 2.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p3, kilbel, 100.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p3, alvear, 3.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 100.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p1, patricia, 7.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p2, patricia, 10.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p2, kilbel, 7.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p3, kilbel, 10.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p3, alvear, 7.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 10.0));
     	
     	//Ubicacion Inicial
-    	this.UbicacionAgente=new Point(7,3);
+    	this.UbicacionAgente=new Point(5,14);
     	
     	//Cargar el mapa
     	Mapa = new MapUnit[10][17];
     	
-    	int normalCost = 10;
-    	int normalTime = 10;
+    	int normalCost = 5;
+    	int normalTime = 5;
     	int help=0;
     	
     	//0
