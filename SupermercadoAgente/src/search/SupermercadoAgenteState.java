@@ -487,6 +487,28 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
 	public void setMapa(MapUnit[][] mapa) {
 		Mapa = mapa;
 	}
+
+	public double getHeuristic() {
+		
+		Double minDistance = Double.MAX_VALUE;
+		
+		for(ProductoComercio pc : this.MatrizProductoComercio) {
+			
+			if(this.Mapa[pc.getComercio().getUbicacion().x][pc.getComercio().getUbicacion().y].getTipo() == TipoEnum.SUPERMERCADO) {
+				
+				if(Math.abs(pc.getComercio().getUbicacion().distance(this.Ubicacion)) < minDistance) {
+					minDistance=Math.abs(pc.getComercio().getUbicacion().distance(this.Ubicacion));
+				}
+				
+			}
+			
+		}
+		
+		if(minDistance.equals(Double.MAX_VALUE)) return 0.0;
+		
+		return minDistance;
+		
+	}
     
 	// The following methods are agent-specific:
 	/*

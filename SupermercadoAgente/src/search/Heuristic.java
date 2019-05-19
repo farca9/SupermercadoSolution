@@ -12,8 +12,7 @@ public class Heuristic implements IEstimatedCostFunction {
     public double getEstimatedCost(NTree node) {
         SupermercadoAgenteState agState = (SupermercadoAgenteState) node.getAgentState();
 	
-		//Method: Complete Method
-		
-        return 0;
+        return agState.getHeuristic();
+        
     }
 }

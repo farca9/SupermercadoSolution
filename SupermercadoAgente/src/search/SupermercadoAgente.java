@@ -9,8 +9,10 @@ import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.agent.search.Problem;
 import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgent;
+import frsf.cidisi.faia.solver.search.AStarSearch;
 import frsf.cidisi.faia.solver.search.BreathFirstSearch;
 import frsf.cidisi.faia.solver.search.DepthFirstSearch;
+import frsf.cidisi.faia.solver.search.GreedySearch;
 import frsf.cidisi.faia.solver.search.IStepCostFunction;
 import frsf.cidisi.faia.solver.search.Search;
 import frsf.cidisi.faia.solver.search.UniformCostSearch;
@@ -50,10 +52,11 @@ public class SupermercadoAgente extends SearchBasedAgent {
     public Action selectAction() {
 
         // Create the search strategy
-        //IStepCostFunction cost = new CostFunction();
-        UniformCostSearch strategy = new UniformCostSearch(new CostFunction());
-        CostFunction.Type=CostFunctionType.TRAVELMONEY;
-    	//BreathFirstSearch strategy = new BreathFirstSearch();
+    	CostFunction.Type=CostFunctionType.TRAVELMONEY;
+        //UniformCostSearch strategy = new UniformCostSearch(new CostFunction());
+        //GreedySearch strategy = new GreedySearch(new Heuristic());
+    	AStarSearch strategy = new AStarSearch(new CostFunction(), new Heuristic());
+        //BreathFirstSearch strategy = new BreathFirstSearch();
     	//DepthFirstSearch strategy = new DepthFirstSearch();
     	
         // Create a Search object with the strategy
