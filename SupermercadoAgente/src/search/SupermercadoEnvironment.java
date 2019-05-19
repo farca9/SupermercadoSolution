@@ -96,4 +96,19 @@ public class SupermercadoEnvironment extends Environment {
 		
 		return comercios;
 	}
+	
+	public ArrayList<Producto> getProductos(){
+		Set<Producto> setProductos = new HashSet<Producto>();
+		for(ProductoComercio pc : this.getMatrizProductoComercio()) {
+			setProductos.add(pc.getProducto());
+		}
+		
+		ArrayList<Producto> productos = new ArrayList<Producto>();
+		for(Producto p : setProductos) {
+			productos.add(p);
+		}
+		
+		return productos;
+	}
+	
 }

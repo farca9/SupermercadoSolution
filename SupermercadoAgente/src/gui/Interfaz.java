@@ -210,17 +210,40 @@ public class Interfaz {
 		    {
 		      public void actionPerformed(ActionEvent e)
 		      {
-		    	  JTextField nombre_producto = new JTextField();
-		    	  final JComponent[] inputs = new JComponent[] {
-		    	          new JLabel("Nombre del Producto"),
-		    	          nombre_producto
-		    	  };
-		    	  int codigo_producto = ambiente.getListaProductos().size()+1;
-		    	  int result = JOptionPane.showConfirmDialog(null, inputs, "Nuevo producto", JOptionPane.PLAIN_MESSAGE);
-		    	  if (result == JOptionPane.OK_OPTION) {
-			    	  ambiente.getListaProductos().add(new Producto(codigo_producto,nombre_producto.getText()));
-			    	  frame.dispose();
-			    	  actualizarInterfaz(agente,ambiente);
+		    	  ArrayList<Producto> listados = ambiente.getProductos();
+		    	  ArrayList<Producto> disponibles = (ArrayList)ambiente.getListaProductos();
+		    	  ArrayList<Producto> resultado = new ArrayList<Producto>();
+		    	  
+		    	  for(Producto pD : disponibles) {
+		    		  boolean b = true;
+		    		  for(Producto pL : listados) {
+		    			  if(pD.equals(pL)) b = false;
+		    		  }
+		    		  if(b) resultado.add(pD);
+		    	  }
+		    	  
+		    	  
+		    	  
+		    	  if (resultado.size() == 0) {
+		    		  
+		    	  } else {
+			    	  String[] lista_productos = new String[resultado.size()];
+				      for(int i = 0; i < resultado.size(); i++) {
+				        	lista_productos[i] = resultado.get(i).getNombre();
+				      }
+				      JComboBox cmbProductos = new JComboBox(lista_productos);
+				        
+			    	  final JComponent[] inputs = new JComponent[] {
+			    	          new JLabel("Elija un Producto"),
+			    	          cmbProductos
+			    	  };
+			    	  int codigo_producto = ambiente.getProductos().get(cmbProductos.getSelectedIndex()).getId();
+			    	  int result = JOptionPane.showConfirmDialog(null, inputs, "Añadir producto", JOptionPane.PLAIN_MESSAGE);
+			    	  if (result == JOptionPane.OK_OPTION) {
+				    	  ambiente.getListaProductos().add(new Producto(codigo_producto,cmbProductos.getSelectedItem().toString()));
+				    	  frame.dispose();
+				    	  actualizarInterfaz(agente,ambiente);
+			    	  }
 		    	  }
 		    	  	  
 		      }
