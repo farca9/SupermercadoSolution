@@ -43,6 +43,7 @@ import java.awt.Graphics2D;
 public class Interfaz {
 	
 	private static JPanel board;
+	private static JFrame frame=null;
 	
     public static SupermercadoAgenteState agente = null;
     public static SupermercadoEnvironment ambiente = null;
@@ -51,11 +52,14 @@ public class Interfaz {
 	
 	public static void inicializarInterfaz() {
 		
-		JFrame frame = new JFrame("SupermercadoSolution - IA | Arca - López - Rossini");
-		frame.setSize(1080,1055);
-		frame.setResizable(false);
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		if(frame==null) {
+			frame = new JFrame("SupermercadoSolution - IA | Arca - López - Rossini");
+			frame.setSize(1080,1055);
+			frame.setResizable(false);
+			frame.setLocationRelativeTo(null);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		}
+
 		
 		
 		int width = agente.getMapa().length;
@@ -103,7 +107,11 @@ public class Interfaz {
 				listaProductos.add(tituloListaProductos);
 				
 		        for(Producto pr : agente.getListaProductos().keySet()) {
-		        	 JLabel labelProductos = new JLabel(" - " + pr.getNombre().toString());
+		        	String s="";
+		        	if(agente.getListaProductos().get(pr)) {
+		        		s+=" (x)";
+		        	}
+		        	 JLabel labelProductos = new JLabel(" - " + pr.getNombre().toString()+s);
 				     labelProductos.setFont(elemento);
 				     listaProductos.add(labelProductos);
 		        }
