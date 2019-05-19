@@ -127,13 +127,13 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	
     	
     	//Inicializacion del mapa
-    	Mapa = new MapUnit[3][3];
+    	/*Mapa = new MapUnit[3][3];
     	
     	Mapa[0][0]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, true);
     	Mapa[0][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, false);
     	Mapa[0][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, false, true);
     	
-    	Mapa[1][0]= new MapUnit(TipoEnum.CALLENORMAL, 50, 50, false, false, false, true);
+    	Mapa[1][0]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, false, true);
     	Mapa[1][1]= new MapUnit(TipoEnum.MANZANA, 0, 0, false, false, false, false);
     	Mapa[1][2]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, false, false, true);
     	
@@ -162,9 +162,9 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	this.MatrizProductoComercio=new ArrayList<ProductoComercio>();
     	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 5.0));
     	MatrizProductoComercio.add(new ProductoComercio(p2, alvear, 5.0));
-    	
-    	
-    	/*Mapa = new MapUnit[4][4];
+    	*/
+    	/*
+    	Mapa = new MapUnit[4][4];
     	
     	Mapa[0][0]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, false);
     	Mapa[0][1]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, true, false, false, false);
@@ -208,7 +208,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 5.0));
     	MatrizProductoComercio.add(new ProductoComercio(p2, kilbel, 3.0));
 		*/
-    	/*
+    	
     	Mapa = new MapUnit[10][6];
     	
     	Mapa[0][0]= new MapUnit(TipoEnum.CALLENORMAL, 1, 1, false, true, false, false);
@@ -283,8 +283,8 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	
     	
     	//Ubicacion Inicial
-    	this.Ubicacion=new Point(2,2);
-    	this.UbicacionAnterior=new Point(2,2);
+    	this.Ubicacion=new Point(8,5);
+    	this.UbicacionAnterior=new Point(8,5);
     	
     	//Producto(s)
     	Producto p1 = new Producto(1,"Huevos");
@@ -323,7 +323,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	//MatrizProductoComercio.add(new ProductoComercio(p6, patricia, 14.0));
     	//MatrizProductoComercio.add(new ProductoComercio(p4, patricia, 18.0));
     	//MatrizProductoComercio.add(new ProductoComercio(p1, patricia, 4.0));
-    	*/
+    	
     	
     }
 

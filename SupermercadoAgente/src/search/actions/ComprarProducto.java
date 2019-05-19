@@ -101,11 +101,13 @@ public class ComprarProducto extends SearchAction {
      */
     @Override
     public Double getCost(SearchBasedAgentState s) {
-    	SupermercadoAgenteState state = (SupermercadoAgenteState)s;
+    	/*SupermercadoAgenteState state = (SupermercadoAgenteState)s;
     	
     	double costo = 0.0;
     	costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].calcularCosto();
-        return costo;
+        return costo;*/
+    	return 0.1;
+        
     }
 
     /**
