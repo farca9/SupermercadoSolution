@@ -336,8 +336,8 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	
     	//Comercio(s)
     	Comercio alvear = new Comercio(1,"Alvear", new Point(2,7));
-    	Comercio kilbel = new Comercio(2,"Kilbel", new Point(0,14));
-    	Comercio patricia = new Comercio(3,"Patricia", new Point(8,1));
+    	//Comercio kilbel = new Comercio(2,"Kilbel", new Point(0,14));
+    	//Comercio patricia = new Comercio(3,"Patricia", new Point(8,1));
     	
     	//Lista productos
     	this.ListaProductos=new HashMap();
@@ -348,9 +348,9 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	
     	//Matriz producto comercio
     	this.MatrizProductoComercio=new ArrayList();
-    	MatrizProductoComercio.add(new ProductoComercio(p1, patricia, 5.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 5.0));
     	MatrizProductoComercio.add(new ProductoComercio(p2, alvear, 2.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p3, kilbel, 10.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p3, alvear, 10.0));
     	
     	//Ubicacion Inicial
     	this.Ubicacion=new Point(8,6);
@@ -606,10 +606,17 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
         
         	Set<Entry<Producto, Boolean>> receivedSet = state.ListaProductos.entrySet();
         	Set<Entry<Producto, Boolean>> thisSet = this.ListaProductos.entrySet();
-        	if(ListaProductos.size()!=state.ListaProductos.size()) {
+        	if(receivedSet.size()!=thisSet.size()) {
         		return false;
-        	} else if (!ListaProductos.equals(state.ListaProductos)) {
-        		return false; 
+        	} else {
+        		for(Entry<Producto,Boolean> entryReceived : receivedSet) {
+        			
+        			if(!thisSet.contains(entryReceived)) {
+        				return false;
+        			}
+        			
+        		}
+        		
         	}
         	
         	if(!state.getMatrizProductoComercio().equals(this.MatrizProductoComercio)) {

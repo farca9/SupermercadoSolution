@@ -19,7 +19,6 @@ INDEX VERSION 1.131+C:\Git\SupermercadoSolution\.metadata\.plugins\org.eclipse.j
 14682029.index
 1988513050.index
 1518219961.index
-4282165807.index
 2511617568.index
 2476897490.index
 898289412.index

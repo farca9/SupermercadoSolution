@@ -291,8 +291,8 @@ public class SupermercadoEnvironmentState extends EnvironmentState {
     	
     	//Comercio(s)
     	Comercio alvear = new Comercio(1,"Alvear", new Point(2,7));
-    	Comercio kilbel = new Comercio(2,"Kilbel", new Point(0,14));
-    	Comercio patricia = new Comercio(3,"Patricia", new Point(8,1));
+    	//Comercio kilbel = new Comercio(2,"Kilbel", new Point(0,14));
+    	//Comercio patricia = new Comercio(3,"Patricia", new Point(8,1));
     	
     	//Lista productos
     	this.ListaProductos=new ArrayList();
@@ -303,9 +303,9 @@ public class SupermercadoEnvironmentState extends EnvironmentState {
     	
     	//Matriz producto comercio
     	this.MatrizProductoComercio=new ArrayList();
-    	MatrizProductoComercio.add(new ProductoComercio(p1, patricia, 5.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 5.0));
     	MatrizProductoComercio.add(new ProductoComercio(p2, alvear, 2.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p3, kilbel, 10.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p3, alvear, 10.0));
     	
     	//Ubicacion Inicial
     	this.UbicacionAgente=new Point(8,6);

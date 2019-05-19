@@ -37,7 +37,7 @@ public class EntrarSupermercado extends SearchAction {
         
         if(ubicacionSupermercado != null) {
         	
-        	if( verSiTieneParaComprar(ubicacionSupermercado,nextState)) {
+        	if(true /*verSiTieneParaComprar(ubicacionSupermercado,nextState)*/) {
         	nextState.setUbicacion(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
         	nextState.setUbicacionAnterior(new Point(ubicacionAgente.x,ubicacionAgente.y));
         	//nextState.setCosto(getCost());
@@ -91,7 +91,7 @@ public class EntrarSupermercado extends SearchAction {
         
         if(ubicacionSupermercado != null ) {
         	
-        	if(verSiTieneParaComprar(ubicacionSupermercado,agState)) {
+        	if(true/*verSiTieneParaComprar(ubicacionSupermercado,agState)*/) {
         	agState.setUbicacion(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
         	agState.setUbicacionAnterior(new Point(ubicacionAgente.x,ubicacionAgente.y));
         	//agState.setCosto(getCost());
