@@ -9,6 +9,6 @@ public enum TipoEnum {
 	CALLECORTADA,
 	SUPERMERCADOCERRADO,
 	CONGESTION,
-	BACHE
+	BACHE;
 	
 }

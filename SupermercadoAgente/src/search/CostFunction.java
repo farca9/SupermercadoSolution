@@ -11,7 +11,7 @@ public class CostFunction implements IStepCostFunction {
     @Override
     public double calculateCost(NTree node) {
     	
-        return node.getCost();
+        return node.getAction().getCost(node.getAgentState()); //es el estado del nodo o del padre
         
     }
 }

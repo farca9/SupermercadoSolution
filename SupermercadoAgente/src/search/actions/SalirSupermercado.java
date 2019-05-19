@@ -65,9 +65,11 @@ public class SalirSupermercado extends SearchAction {
      * This method returns the action cost.
      */
     @Override
-    public Double getCost() {
+    public Double getCost(SearchBasedAgentState s) {
+    	SupermercadoAgenteState state = (SupermercadoAgenteState)s;
+    	
     	double costo = 0.0;
-    	//costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
+    	costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].calcularCosto();
         return costo;
     }
 
@@ -79,4 +81,10 @@ public class SalirSupermercado extends SearchAction {
     public String toString() {
         return "SalirSupermercado";
     }
+
+	@Override
+	public Double getCost() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

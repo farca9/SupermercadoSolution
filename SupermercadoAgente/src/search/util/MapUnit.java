@@ -109,5 +109,21 @@ public class MapUnit {
 		return true;
 	}
 	
+	public Double calcularCosto() { //EL COSTO DE SALIR DE ESTE MAPUNIT HACIA OTRO
+		
+		Double costo = new Double(this.Costo);
+		Double mult = 1.0;
+		
+		switch(this.Tipo) {
+		case CALLENORMAL: mult=1.0; break;
+		case BACHE: mult=1.3; break;
+		case CONGESTION: mult=2.0; break;
+		case EVENTO: mult=1.8; break;
+		default:costo=1.0;break;
+		}
+		
+		return costo*mult;
+		
+	}
 	
 }

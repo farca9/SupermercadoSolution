@@ -38,4 +38,8 @@ public abstract class SearchAction extends Action {
      * by the agent's actions to return its cost.
      */
     public abstract Double getCost();
+    
+    public Double getCost(SearchBasedAgentState s) {
+    	return 0.0;
+    }
 }

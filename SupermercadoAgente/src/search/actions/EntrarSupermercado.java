@@ -82,9 +82,11 @@ public class EntrarSupermercado extends SearchAction {
      * This method returns the action cost.
      */
     @Override
-    public Double getCost() {
+    public Double getCost(SearchBasedAgentState s) {
+    	SupermercadoAgenteState state = (SupermercadoAgenteState)s;
+    	
     	double costo = 0.0;
-    	//costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
+    	costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].calcularCosto();
         return costo;
     }
 
@@ -100,22 +102,25 @@ public class EntrarSupermercado extends SearchAction {
 	private Point getNearbySupermarket(SupermercadoAgenteState s) { //Se asume que los supermercados estan espaciados
 			
 	    	ArrayList<ProductoComercio> MatrizProductoComercio = s.getMatrizProductoComercio();
-	    	Point location = null;
-	    	boolean hasFound=false;
-	    	
 	    	for(ProductoComercio pc : MatrizProductoComercio) {
+	    		
 	    		Comercio c = pc.getComercio();
 	    		MapUnit mu = s.getMapa()[c.getUbicacion().x][c.getUbicacion().y];
-	    		if(new Double(c.getUbicacion().distance(s.getUbicacion())).equals(new Double(1.0)) && mu.getTipo()==TipoEnum.SUPERMERCADO) {
-	    			if (hasFound) {
-	    				return null; //Hay mas de un supermercado aleda�o, se asume que no ocurre y el operador no se ejecuta
-	    			} else {
-	    				location = new Point(c.getUbicacion().x,c.getUbicacion().y);
-	    				hasFound=true;
+	    		
+	    		if((new Double(c.getUbicacion().distance(s.getUbicacion()))).equals(new Double(1.0))){
+	    			if(mu.getTipo().equals(TipoEnum.SUPERMERCADO)) {
+	    				return new Point(c.getUbicacion().x,c.getUbicacion().y);
 	    			}
 	    		}
+	    		
 	    	}
 	    	
-			return location;
+			return null;
+	}
+
+	@Override
+	public Double getCost() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

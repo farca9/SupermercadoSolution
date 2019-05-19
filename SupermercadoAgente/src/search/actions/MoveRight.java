@@ -101,30 +101,12 @@ public class MoveRight extends SearchAction {
      * This method returns the action cost.
      */
     @Override
-    public Double getCost() {
-    	double costo = 0.0;
+    public Double getCost(SearchBasedAgentState s) {
+    	SupermercadoAgenteState state = (SupermercadoAgenteState)s;
     	
-    	/*TipoEnum tipo = state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getTipo();
-		
-		costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].getCosto();
-				
-    		if (tipo == TipoEnum.BACHE) {
-    			
-    			costo += costo*(0.3);
-    			
-    		} 
-    		else if (tipo == TipoEnum.CONGESTION) {
-    			
-    			costo += costo*(2);
-    			
-    		} 
-    		else if (tipo == TipoEnum.EVENTO) {
-    			
-    			costo += costo*(0.8);
-    			
-    		}
-    		*/
-    		return costo;
+    	double costo = 0.0;
+    	costo +=  state.getMapa()[state.getUbicacion().x][state.getUbicacion().y].calcularCosto();
+        return costo;
     }
 
     /**
@@ -135,4 +117,10 @@ public class MoveRight extends SearchAction {
     public String toString() {
         return "MoveRight";
     }
+
+	@Override
+	public Double getCost() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
