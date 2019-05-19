@@ -37,7 +37,7 @@ public class EntrarSupermercado extends SearchAction {
         
         if(ubicacionSupermercado != null) {
         	
-        	if(true /*verSiTieneParaComprar(ubicacionSupermercado,nextState)*/) {
+        	if(verSiTieneParaComprar(ubicacionSupermercado,nextState)) {
         	nextState.setUbicacion(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
         	nextState.setUbicacionAnterior(new Point(ubicacionAgente.x,ubicacionAgente.y));
         	//nextState.setCosto(getCost());
@@ -64,10 +64,19 @@ public class EntrarSupermercado extends SearchAction {
 			
 		}
 		
-		for(Producto p : productosEnSuper) {
+		for(Producto pS : productosEnSuper) {
 			
-			if(state.getListaProductos().get(p)!= null && !state.getListaProductos().get(p)) {
+			/*if(state.getListaProductos().containsKey(p) && !state.getListaProductos().get(p)) {
 				return true;
+			}*/
+			for(Producto pA : state.getListaProductos().keySet()) {
+				
+				if(pS.equals(pA)) {
+					if(!state.getListaProductos().get(pA)) {
+						return true;
+					}
+				}
+				
 			}
 			
 		}
@@ -91,7 +100,7 @@ public class EntrarSupermercado extends SearchAction {
         
         if(ubicacionSupermercado != null ) {
         	
-        	if(true/*verSiTieneParaComprar(ubicacionSupermercado,agState)*/) {
+        	if(verSiTieneParaComprar(ubicacionSupermercado,agState)) {
         	agState.setUbicacion(new Point(ubicacionSupermercado.x,ubicacionSupermercado.y));
         	agState.setUbicacionAnterior(new Point(ubicacionAgente.x,ubicacionAgente.y));
         	//agState.setCosto(getCost());
