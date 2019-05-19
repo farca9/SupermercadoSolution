@@ -6,7 +6,6 @@ import frsf.cidisi.faia.agent.Agent;
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.environment.Environment;
 import search.util.MapUnit;
-import search.util.MapUnitUpdater;
 import search.util.Producto;
 import search.util.ProductoComercio;
 
