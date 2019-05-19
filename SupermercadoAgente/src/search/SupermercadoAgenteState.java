@@ -113,7 +113,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	
     	
     	//El agente actualiza su matriz de producto comercio
-    	this.MatrizProductoComercio=(ArrayList<ProductoComercio>)sap.getMatrizProductoComercioPerception();
+    	//this.MatrizProductoComercio=(ArrayList<ProductoComercio>)sap.getMatrizProductoComercioPerception();
     	
     }
 
@@ -148,15 +148,15 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	//Matriz producto comercio
     	this.MatrizProductoComercio=new ArrayList();
     	MatrizProductoComercio.add(new ProductoComercio(p1, patricia, 5.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p2, patricia, 3.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p2, patricia, 10.0));
     	MatrizProductoComercio.add(new ProductoComercio(p2, kilbel, 2.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p3, kilbel, 4.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p3, kilbel, 10.0));
     	MatrizProductoComercio.add(new ProductoComercio(p3, alvear, 3.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 6.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 10.0));
     	
     	//Ubicacion Inicial
-    	this.Ubicacion=new Point(9,0);
-    	this.UbicacionAnterior=new Point(9,0);
+    	this.Ubicacion=new Point(7,3);
+    	this.UbicacionAnterior=new Point(7,3);
     	
     	//Cargar el mapa
     	Mapa = new MapUnit[10][17];
@@ -377,11 +377,11 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
         String str = "\n";
 
         str+="- Ubicacion Actual: ("+ Ubicacion.x+","+Ubicacion.y+")\n";
-        if(UbicacionAnterior != null) {
+        /*if(UbicacionAnterior != null) {
         	str+="- Ubicacion Anterior: ("+UbicacionAnterior.x+","+UbicacionAnterior.y+")\n";
         } else {
         	str+="- Ubicacion Anterior: null";
-        }
+        }*/
         str+="- Lista Productos: "+ListaProductos.toString()+"\n";
         str+="- MatrizProductoComercio:\n";
         str+="  "+MatrizProductoComercio.toString();

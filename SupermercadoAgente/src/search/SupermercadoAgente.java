@@ -15,6 +15,7 @@ import frsf.cidisi.faia.solver.search.IStepCostFunction;
 import frsf.cidisi.faia.solver.search.Search;
 import frsf.cidisi.faia.solver.search.UniformCostSearch;
 import search.actions.*;
+import search.util.CostFunctionType;
 
 public class SupermercadoAgente extends SearchBasedAgent {
 
@@ -50,8 +51,10 @@ public class SupermercadoAgente extends SearchBasedAgent {
 
         // Create the search strategy
         //IStepCostFunction cost = new CostFunction();
-        UniformCostSearch strategy = new UniformCostSearch(new CostFunction());          
+        UniformCostSearch strategy = new UniformCostSearch(new CostFunction());
+        CostFunction.Type=CostFunctionType.TRAVELMONEY;
     	//BreathFirstSearch strategy = new BreathFirstSearch();
+    	//DepthFirstSearch strategy = new DepthFirstSearch();
     	
         // Create a Search object with the strategy
         Search searchSolver = new Search(strategy);

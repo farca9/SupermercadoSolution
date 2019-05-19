@@ -146,7 +146,7 @@ public class EntrarSupermercado extends SearchAction {
 	    		Comercio c = pc.getComercio();
 	    		MapUnit mu = s.getMapa()[c.getUbicacion().x][c.getUbicacion().y];
 	    		
-	    		if((new Double(c.getUbicacion().distance(s.getUbicacion()))).equals(new Double(1.0))){
+	    		if((new Double(c.getUbicacion().distanceSq(s.getUbicacion()))).equals(new Double(1.0))){
 	    			if(mu.getTipo().equals(TipoEnum.SUPERMERCADO)) {
 	    				return new Point(c.getUbicacion().x,c.getUbicacion().y);
 	    			}

@@ -1,5 +1,8 @@
 package search.util;
 
+import search.CostFunction;
+import search.util.CostFunctionType;
+
 public class MapUnit {
 
 	private TipoEnum Tipo;
@@ -109,21 +112,22 @@ public class MapUnit {
 		return true;
 	}
 	
-	public Double calcularCosto() { //EL COSTO DE SALIR DE ESTE MAPUNIT HACIA OTRO
+	public Double calcularCosto() {
 		
-		Double costo = new Double(this.Costo);
-		Double mult = 1.0;
-		
-		switch(this.Tipo) {
-		case CALLENORMAL: mult=1.0; break;
-		case BACHE: mult=1.3; break;
-		case CONGESTION: mult=2.0; break;
-		case EVENTO: mult=1.8; break;
-		default:costo=1.0;break;
-		}
-		
-		return costo*mult;
-		
+		if(CostFunction.Type == CostFunctionType.BUYMONEY) {
+			
+			return new Double(this.Costo);
+			
+		} else if (CostFunction.Type == CostFunctionType.TRAVELMONEY) {
+			
+			return new Double(this.Costo);
+			
+		} else if (CostFunction.Type == CostFunctionType.TIME) {
+			
+			return new Double(this.Tiempo);
+			
+		} else return 1.0;		
+
 	}
 	
 }
