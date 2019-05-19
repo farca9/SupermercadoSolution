@@ -1,7 +1,17 @@
 package search;
 
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import frsf.cidisi.faia.agent.Action;
 import frsf.cidisi.faia.environment.Environment;
+import search.util.Comercio;
+import search.util.MapUnit;
+import search.util.Producto;
+import search.util.ProductoComercio;
 
 public class SupermercadoEnvironment extends Environment {
 
@@ -53,5 +63,37 @@ public class SupermercadoEnvironment extends Environment {
 	//TODO: Complete this section with agent-specific methods
     // The following methods are agent-specific:
     
+    public List<Producto> getListaProductos(){
+    	return getEnvironmentState().getListaProductos();
+    }
     
+    public List<ProductoComercio> getMatrizProductoComercio(){
+    	return getEnvironmentState().getMatrizProductoComercio();
+    }
+    
+    public MapUnit[][] getMapa(){
+    	return getEnvironmentState().getMapa();
+    }
+    
+    public Point getUbicacionAgente() {
+    	return getEnvironmentState().getUbicacionAgente();
+    }
+    
+    public void setUbicacionAgente(Point ubicacion) {
+    	getEnvironmentState().setUbicacionAgente(ubicacion);
+    }
+    
+	public ArrayList<Comercio> getComercios(){
+		Set<Comercio> setComercios = new HashSet<Comercio>();
+		for(ProductoComercio pc : this.getMatrizProductoComercio()) {
+			setComercios.add(pc.getComercio());
+		}
+		
+		ArrayList<Comercio> comercios = new ArrayList<Comercio>();
+		for(Comercio c : setComercios) {
+			comercios.add(c);
+		}
+		
+		return comercios;
+	}
 }

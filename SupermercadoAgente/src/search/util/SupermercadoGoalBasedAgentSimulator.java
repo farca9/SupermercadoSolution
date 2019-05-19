@@ -1,52 +1,28 @@
-/*
- * Copyright 2007-2009 Georgina Stegmayer, Milagros Gutiérrez, Jorge Roa
- * y Milton Pividori.
- * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-package frsf.cidisi.faia.simulator;
+package search.util;
 
-import java.util.Vector;
+import javax.swing.JOptionPane;
 
-import frsf.cidisi.faia.agent.GoalBasedAgent;
-import frsf.cidisi.faia.agent.Agent;
 import frsf.cidisi.faia.agent.Action;
+import frsf.cidisi.faia.agent.Agent;
+import frsf.cidisi.faia.agent.GoalBasedAgent;
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.environment.Environment;
+import gui.Interfaz;
+import search.*;
+import frsf.cidisi.faia.simulator.SearchBasedAgentSimulator;
 import frsf.cidisi.faia.simulator.events.EventType;
 import frsf.cidisi.faia.simulator.events.SimulatorEventNotifier;
 
-public abstract class GoalBasedAgentSimulator extends Simulator {
+public class SupermercadoGoalBasedAgentSimulator extends SearchBasedAgentSimulator {
 
-
+	private static Interfaz gui;
+	public static boolean stop=true;
 	
-    /**
-     * 
-     * @param environment
-     */
-    public GoalBasedAgentSimulator(Environment environment, Vector<Agent> agents) {
-        super(environment, agents);
-    }
-
-    public GoalBasedAgentSimulator(Environment environment, Agent agent) {
-        Vector<Agent> ags = new Vector<Agent>();
-        ags.add(agent);
-
-        this.environment = environment;
-        this.agents = ags;
-    }
-
+	public SupermercadoGoalBasedAgentSimulator(Environment environment, Agent agent) {
+		super(environment, agent);
+		// TODO Auto-generated constructor stub
+	}
+	
     @Override
     public void start() {
 
@@ -61,6 +37,8 @@ public abstract class GoalBasedAgentSimulator extends Simulator {
 
         agent = (GoalBasedAgent) this.getAgents().firstElement();
         
+        Interfaz.agente=(SupermercadoAgenteState)agent.getAgentState();
+        Interfaz.ambiente= (SupermercadoEnvironment)this.environment;
         
         /*
          * Simulation starts. The environment sends perceptions to the agent, and
@@ -92,21 +70,27 @@ public abstract class GoalBasedAgentSimulator extends Simulator {
 
             this.actionReturned(agent, action);
             
+            gui.actualizarInterfaz((SupermercadoAgenteState)agent.getAgentState(),(SupermercadoEnvironment)environment);
             
-            try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+            stop=true;
+            while(stop) {
+            	try {
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
             
         } while (!this.agentSucceeded(action) && !this.agentFailed(action));
 
         // Check what happened, if agent has reached the goal or not.
         if (this.agentSucceeded(action)) {
             System.out.println("Agent has reached the goal!");
+            JOptionPane.showMessageDialog(null, "Se cumplio la prueba de meta",  "EXITO",JOptionPane.INFORMATION_MESSAGE);
         } else {
             System.out.println("ERROR: The simulation has finished, but the agent has not reached his goal.");
+            JOptionPane.showMessageDialog(null,  "No se pudo alcanzar el objetivo","ERROR", JOptionPane.ERROR_MESSAGE);
         }
 
         // Leave a blank line
@@ -119,29 +103,4 @@ public abstract class GoalBasedAgentSimulator extends Simulator {
         SimulatorEventNotifier.runEventHandlers(EventType.SimulationFinished, null);
     }
 
-    /**
-     * Here we update the state of the agent and the real state of the
-     * simulator.
-     * @param action
-     */
-    protected void updateState(Action action) {
-        this.getEnvironment().updateState(((GoalBasedAgent) agents.elementAt(0)).getAgentState(), action);
-    }
-
-    public abstract boolean agentSucceeded(Action action);
-
-    public abstract boolean agentFailed(Action action);
-
-    /**
-     * This method is executed in the mail loop of the simulation when the
-     * agent returns an action.
-     * @param agent
-     * @param action
-     */
-    public abstract void actionReturned(Agent agent, Action action);
-
-    /**
-     * @return The name of the simulator, e.g. 'SearchBasedAgentSimulator'
-     */
-    public abstract String getSimulatorName();
 }

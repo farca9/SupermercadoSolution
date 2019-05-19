@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.GraphicsConfiguration;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.Stroke;
 import java.awt.event.ActionEvent;
@@ -10,6 +11,10 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -18,9 +23,12 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 
 import search.SupermercadoAgenteState;
+import search.SupermercadoEnvironment;
+import search.util.Comercio;
 import search.util.MapUnit;
 import search.util.Producto;
 import search.util.ProductoComercio;
+import search.util.SupermercadoGoalBasedAgentSimulator;
 import search.util.TipoEnum;
 
 import java.awt.BasicStroke;
@@ -36,19 +44,15 @@ public class Interfaz {
 	
 	private static JPanel board;
 	
-    private static SupermercadoAgenteState agente = null;
+    public static SupermercadoAgenteState agente = null;
+    public static SupermercadoEnvironment ambiente = null;
+    private static boolean estadoInicial = true;
 	
-	public static void main(String[] args){
-		
-		agente = new SupermercadoAgenteState();
-		inicializarInterfaz(agente);
-		
-	}
 	
-	public static void inicializarInterfaz(SupermercadoAgenteState agente) {
+	public static void inicializarInterfaz() {
 		
-		JFrame frame = new JFrame("SupermercadoSolution - IA");
-		frame.setSize(900,1000);
+		JFrame frame = new JFrame("SupermercadoSolution - IA | Arca - López - Rossini");
+		frame.setSize(1080,1055);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,28 +71,35 @@ public class Interfaz {
             }
         }
 
-        board = new BoardPanel(mapaGrafico);
+        board = new BoardPanel(mapaGrafico,ambiente);
 	
         //Panel Principal
         JPanel contenedor = new JPanel(new BorderLayout());
         contenedor.add(board);
         
         //Fuentes
+        Font superior = new Font("Verdana", Font.BOLD, 24);
         Font titulo = new Font("Arial", Font.BOLD, 20);
 		Font elemento = new Font("Arial", Font.PLAIN, 18);
         
 		//Panel de Datos
 		JPanel datos = new JPanel();
-        datos.setLayout(new GridLayout(0,3));
+        datos.setLayout(new GridLayout(3,0));
         
         	//Panel de Lista de Productos
 	        JPanel listaProductos = new JPanel();
 	        listaProductos.setLayout(new BoxLayout(listaProductos, BoxLayout.PAGE_AXIS));
-			
-				JLabel tituloListaProductos = new JLabel("PRODUCTOS A COMPRAR");
+	        
+	        	JLabel tituloSuperior = new JLabel("SupermercadoSolution    ");
+	        	tituloSuperior.setFont(superior);
+	        	tituloSuperior.setForeground(new Color(255,127,39));
+	        
+				JLabel tituloListaProductos = new JLabel("Mi Lista:");
 				tituloListaProductos.setFont(titulo);
 				tituloListaProductos.setForeground(new Color(0,128,192));
 				
+				listaProductos.add(tituloSuperior);
+				listaProductos.add(new JLabel("\n"));
 				listaProductos.add(tituloListaProductos);
 				
 		        for(Producto pr : agente.getListaProductos().keySet()) {
@@ -101,7 +112,7 @@ public class Interfaz {
 		    JPanel matrizProductos = new JPanel();
 		    matrizProductos.setLayout(new BoxLayout(matrizProductos, BoxLayout.PAGE_AXIS));	        
 			 
-			    JLabel tituloMatrizProductos = new JLabel("PRODUCTOS DISPONIBLES");
+			    JLabel tituloMatrizProductos = new JLabel("Productos Disponibles:  ");
 			    tituloMatrizProductos.setFont(titulo);
 			    tituloMatrizProductos.setForeground(new Color(0,128,192)); 
 			    
@@ -119,51 +130,193 @@ public class Interfaz {
 		JPanel comandos = new JPanel();	   
 		comandos.setLayout(new BoxLayout(comandos, BoxLayout.PAGE_AXIS));
 		
-			JButton btnProximoMovimiento = new JButton ("Proximo Movimiento");
-			JButton btnAgregarProductos = new JButton("Agregar Productos a Comprar");
-			JButton btnAgregarProductosDisponibles = new JButton("Agregar Productos Disponibles");
-			JButton btnAgregarComercios = new JButton("Agregar Comercios");
-	
+			JButton btnProximoMovimiento = new JButton ("Iniciar Simulación");
 			btnProximoMovimiento.setAlignmentX(Component.CENTER_ALIGNMENT);
-			btnAgregarProductos.setAlignmentX(Component.CENTER_ALIGNMENT);
-			btnAgregarProductosDisponibles.setAlignmentX(Component.CENTER_ALIGNMENT);
-			btnAgregarComercios.setAlignmentX(Component.CENTER_ALIGNMENT);
 			
-			btnProximoMovimiento.addActionListener(new ActionListener()
+			try {
+				
+				File imageFile1 = new File("src/gui/drawable/play.png"); 
+				BufferedImage img1 = ImageIO.read(imageFile1);
+				
+				File imageFile2 = new File("src/gui/drawable/next.png"); 
+				BufferedImage img2 = ImageIO.read(imageFile2);
+				
+				if(estadoInicial) btnProximoMovimiento.setIcon(new ImageIcon(img1));
+				else btnProximoMovimiento.setIcon(new ImageIcon(img2));
+				
+				} catch (Exception ex) {
+				System.out.println(ex);
+			}
+			
+			
+			btnProximoMovimiento.addActionListener(new ActionListener(){
+		    public void actionPerformed(ActionEvent e)
 		    {
-		      public void actionPerformed(ActionEvent e)
-		      {
-		        //TODO Ver que onda acá
+		    	if(estadoInicial) {
+					try {
+		    			File imageFile2 = new File("src/gui/drawable/next.png"); 
+		    			BufferedImage img2 = ImageIO.read(imageFile2);
+		    			btnProximoMovimiento.setIcon(new ImageIcon(img2));
+		    		} catch (Exception ex) {
+		    			System.out.println(ex);
+		    		}
+					estadoInicial = false;
+					btnProximoMovimiento.setText("Próximo Movimiento");
+					/*ambiente.setUbicacionAgente(new Point(0,0));*/
+					
+			  		/*frame.invalidate();
+					frame.validate();
+					frame.repaint();*/
+					
+					SupermercadoGoalBasedAgentSimulator.stop=false;
+
+					
+		    	}
+				else {
+		    		try {
+		    			File imageFile1 = new File("src/gui/drawable/play.png"); 
+		    			BufferedImage img1 = ImageIO.read(imageFile1);
+		    			btnProximoMovimiento.setIcon(new ImageIcon(img1));
+		    		} catch (Exception ex) {
+		    			System.out.println(ex);
+		    		}
+		    		estadoInicial = true;
+		    		btnProximoMovimiento.setText("Iniciar Simulación");
+		    		//ambiente.setUbicacionAgente(new Point(8,0));
+
+		    		
+		    		/*frame.invalidate();
+					frame.validate();
+					frame.repaint();*/
+		    		
+		    		SupermercadoGoalBasedAgentSimulator.stop=false;
+
+				}
+		    	
 		      }
 		    });
 			
+			JButton btnAgregarProductos = new JButton("Añadir Productos a Mi Lista");
+			btnAgregarProductos.setAlignmentX(Component.CENTER_ALIGNMENT);
 			btnAgregarProductos.addActionListener(new ActionListener()
 		    {
 		      public void actionPerformed(ActionEvent e)
 		      {
-		    	  String nombre_producto;
-		    	  int codigo_producto = agente.getListaProductos().size()+1;
-		    	  nombre_producto = JOptionPane.showInputDialog("Nombre del Producto");
-		    	  agente.getListaProductos().put(new Producto(codigo_producto,nombre_producto), false);
-		    	  frame.dispose();
-		    	  actualizarInterfaz(agente);
+		    	  JTextField nombre_producto = new JTextField();
+		    	  final JComponent[] inputs = new JComponent[] {
+		    	          new JLabel("Nombre del Producto"),
+		    	          nombre_producto
+		    	  };
+		    	  int codigo_producto = ambiente.getListaProductos().size()+1;
+		    	  int result = JOptionPane.showConfirmDialog(null, inputs, "Nuevo producto", JOptionPane.PLAIN_MESSAGE);
+		    	  if (result == JOptionPane.OK_OPTION) {
+			    	  ambiente.getListaProductos().add(new Producto(codigo_producto,nombre_producto.getText()));
+			    	  frame.dispose();
+			    	  actualizarInterfaz(agente,ambiente);
+		    	  }
 		    	  	  
 		      }
 		    });
 			
+			JButton btnAgregarProductosDisponibles = new JButton("Agregar Productos Disponibles");
+			btnAgregarProductosDisponibles.setAlignmentX(Component.CENTER_ALIGNMENT);
 			btnAgregarProductosDisponibles.addActionListener(new ActionListener()
 		    {
 		      public void actionPerformed(ActionEvent e)
 		      {
-		        //TODO Ver que onda acá
+		        String[] lista_comercios = new String[ambiente.getComercios().size()];
+		        for(int i = 0; i < ambiente.getComercios().size(); i++) {
+		        	lista_comercios[i] = ambiente.getComercios().get(i).getNombre();
+		        }
+		        
+		    	JComboBox cmbComercios = new JComboBox(lista_comercios);
+		    	JTextField nombre_producto = new JTextField();
+		    	JTextField codigo_producto = new JTextField();
+				JTextField precio_producto = new JTextField();
+		    	  
+				final JComponent[] inputs = new JComponent[] {
+		    	          new JLabel("Seleccione el Comercio"),
+		    	          cmbComercios,
+		    	          new JLabel("Nombre del Producto"),
+		    	          nombre_producto,
+		    	          new JLabel("Codigo del Producto"),
+		    	          codigo_producto,
+		    	          new JLabel("Costo del Producto"),
+		    	          precio_producto,
+				};
+				
+				int result = JOptionPane.showConfirmDialog(null, inputs, "Agregar productos disponibles", JOptionPane.PLAIN_MESSAGE);
+				
+				if (result == JOptionPane.OK_OPTION) {
+					Comercio comercioSeleccionado = ambiente.getComercios().get(cmbComercios.getSelectedIndex());
+		    		Producto nuevoProducto = new Producto(Integer.parseInt(codigo_producto.getText()),nombre_producto.getText());
+		    		ProductoComercio nuevo = new ProductoComercio(nuevoProducto,comercioSeleccionado,Double.parseDouble(precio_producto.getText()));
+		    		ambiente.getMatrizProductoComercio().add(nuevo);
+			    	frame.dispose();
+			    	actualizarInterfaz(agente,ambiente);
+		    	}
+				
 		      }
 		    });
 			
+			JButton btnAgregarComercios = new JButton("Agregar Supermercado");
+			btnAgregarComercios.setAlignmentX(Component.CENTER_ALIGNMENT);
 			btnAgregarComercios.addActionListener(new ActionListener()
 		    {
 		      public void actionPerformed(ActionEvent e)
 		      {
-		        //TODO Ver que onda acá
+		    	  ArrayList<Point> manzanas = new ArrayList<Point>();
+		    	  		    	  
+		    	  for (int i = 0; i < ambiente.getMapa().length; i++) {
+		                for (int j = 0; j < ambiente.getMapa()[i].length; j++) {
+		                	if(ambiente.getMapa()[i][j].getTipo().equals(TipoEnum.MANZANA) || ambiente.getMapa()[i][j].getTipo().equals(TipoEnum.SUPERMERCADOCERRADO)) {
+		                		manzanas.add(new Point(i,j));
+		                	}
+		                }
+		          }
+		    	  
+		    	  String[] lista_manzanas = new String[manzanas.size()];
+		    	  for(int i = 0; i < manzanas.size(); i++) {
+		    		  lista_manzanas[i] = "(" + manzanas.get(i).x + ";" + manzanas.get(i).y + ")";
+		    	  }
+		    	  
+		    	  JTextField nombre_comercio = new JTextField();
+		    	  JTextField codigo_comercio = new JTextField();
+		    	  JComboBox cmbManzanas = new JComboBox(lista_manzanas);
+		    	  JTextField nombre_producto = new JTextField();
+		    	  JTextField codigo_producto = new JTextField();
+		    	  JTextField precio_producto = new JTextField();
+		    	  
+		    	  final JComponent[] inputs = new JComponent[] {
+		    			  new JLabel("Codigo del Comercio"),
+		    	          codigo_comercio,
+		    			  new JLabel("Nombre del Comercio"),
+		    	          nombre_comercio,
+		    	          new JLabel("Ubicacion"),
+		    	          cmbManzanas,
+		    	          new JLabel("Nombre del Producto"),
+		    	          nombre_producto,
+		    	          new JLabel("Codigo del Producto"),
+		    	          codigo_producto,
+		    	          new JLabel("Costo del Producto"),
+		    	          precio_producto,
+		    	  };
+		    	  
+		    	  int result = JOptionPane.showConfirmDialog(null, inputs, "Nuevo comercio", JOptionPane.PLAIN_MESSAGE);
+		    	  
+		    	  if (result == JOptionPane.OK_OPTION) {
+		    		  int codigoComercio = Integer.parseInt(codigo_comercio.getText());
+		    		  String nombreComercio = nombre_comercio.getText();
+		    		  Point ubicacionComercio = manzanas.get(cmbManzanas.getSelectedIndex());
+		    		  Comercio nuevoComercio = new Comercio(codigoComercio,nombreComercio,ubicacionComercio);
+		    		  Producto nuevoProducto = new Producto(Integer.parseInt(codigo_producto.getText()),nombre_producto.getText());
+		    		  ProductoComercio nuevo = new ProductoComercio(nuevoProducto,nuevoComercio,Double.parseDouble(precio_producto.getText()));
+		    		  ambiente.getMatrizProductoComercio().add(nuevo);
+		    		  agente.getMapa()[ubicacionComercio.x][ubicacionComercio.y].setTipo(TipoEnum.SUPERMERCADO);
+			    	  frame.dispose();
+			    	  actualizarInterfaz(agente,ambiente);
+		    	  }
+		    	  
 		      }
 		    });
 			
@@ -181,7 +334,7 @@ public class Interfaz {
         datos.add(matrizProductos);
         datos.add(comandos);
         
-        contenedor.add(datos,BorderLayout.PAGE_END);
+        contenedor.add(datos,BorderLayout.LINE_END);
         
         frame.setContentPane(contenedor);     
              
@@ -190,19 +343,24 @@ public class Interfaz {
         
 	}
 	
-	public static void actualizarInterfaz(SupermercadoAgenteState agente) {
+	public static void actualizarInterfaz(SupermercadoAgenteState agenteR, SupermercadoEnvironment ambienteR) {
 		
-		inicializarInterfaz(agente);
+		agente=agenteR;
+		ambiente=ambienteR;
+		
+		inicializarInterfaz();
 		
 	}
 		
 	 private static class BoardPanel extends JPanel {
 
 	        Square[][] squares;
+	        SupermercadoEnvironment ambiente;
 
-	        public BoardPanel(final Square[][] squares) {
+	        public BoardPanel(final Square[][] squares, SupermercadoEnvironment ambiente) {
 
 	            this.squares = squares;
+	            this.ambiente = ambiente;
 	            setToolTipText("");
 
 	        }
@@ -213,8 +371,8 @@ public class Interfaz {
 	        	int x = event.getPoint().x;
 	        	int y = event.getPoint().y;
 	        	
-	        	x = x/100;
-	        	y = y/100;
+	        	x = x/70;
+	        	y = y/60;
 	        	
 	        	if(x<squares.length && y<squares[0].length) {
 	        		return squares[x][y].getMapUnit().getTipo().toString()+" @ ("+x+";"+y+")";
@@ -227,8 +385,8 @@ public class Interfaz {
 	        	
 	            super.paintComponent(g);
 
-	            int width = 500;
-	            int height = 450;
+	            int width = 700;
+	            int height = 600;
 
 	            for (int i = 0; i < squares.length; i++) {
 	                for (int j = 0; j < squares[i].length; j++) {
@@ -261,8 +419,20 @@ public class Interfaz {
 	                    //Borde de cada cuadrado
 	                    Graphics2D borde = this.crearBorde(g,1,new Color(240,240,240));
 	    	            borde.drawRect(x, y, width / squares.length, height / squares.length);
+	    	            
+	    	            //Borde del agente
+	    	            int agenteX = ambiente.getUbicacionAgente().x;
+	    	            int agenteY = ambiente.getUbicacionAgente().y;
+	    	            if(agenteX==i && agenteY==j) {
+		                    Graphics2D bordeAgente = this.crearBorde(g,3,Color.BLUE);
+		    	            borde.drawRect(x, y, width / squares.length-2, height / squares.length-2);
+	    	            }
 	                }
 	            }
+	            
+	            
+	            
+	            
 
 	        }
 	        
@@ -315,7 +485,7 @@ public class Interfaz {
         	} else if(this.mapUnit.getTipo().equals(TipoEnum.MANZANA)) {
         		this.setBackground(new Color(255,235,156));
         	} else if(this.mapUnit.getTipo().equals(TipoEnum.SUPERMERCADOCERRADO)) {
-        		this.setBackground(Color.BLUE);
+        		this.setBackground(new Color(153,217,234));
         	} else {
         		this.setBackground(Color.WHITE);
         	}
