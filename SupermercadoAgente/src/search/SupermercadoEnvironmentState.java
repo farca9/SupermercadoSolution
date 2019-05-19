@@ -303,9 +303,9 @@ public class SupermercadoEnvironmentState extends EnvironmentState {
     	
     	//Matriz producto comercio
     	this.MatrizProductoComercio=new ArrayList();
-    	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 5.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p2, kilbel, 2.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p3, alvear, 10.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p1, kilbel, 5.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p2, alvear, 2.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p3, kilbel, 10.0));
     	
     	//Ubicacion Inicial
     	this.UbicacionAgente=new Point(8,6);

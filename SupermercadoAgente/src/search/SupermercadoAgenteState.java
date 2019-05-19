@@ -348,9 +348,9 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	
     	//Matriz producto comercio
     	this.MatrizProductoComercio=new ArrayList();
-    	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 5.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p2, kilbel, 2.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p3, alvear, 10.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p1, kilbel, 5.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p2, alvear, 2.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p3, kilbel, 10.0));
     	
     	//Ubicacion Inicial
     	this.Ubicacion=new Point(8,6);
@@ -609,10 +609,15 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
         	if(receivedSet.size()!=thisSet.size()) {
         		return false;
         	} else {
-        		for(Entry<Producto,Boolean> entryReceived : receivedSet) {
-        			
-        			if(!thisSet.contains(entryReceived)) {
-        				return false;
+        		
+        		for(Producto pTS : this.ListaProductos.keySet()) {	
+        			for(Producto pRS : state.getListaProductos().keySet()) {
+        				if(pTS.equals(pRS)) {
+        					if(state.getListaProductos().get(pRS) != this.ListaProductos.get(pTS)) {
+        						return false;
+        					}
+        				}
+        				
         			}
         			
         		}
