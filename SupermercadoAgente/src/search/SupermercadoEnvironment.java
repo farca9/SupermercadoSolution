@@ -49,7 +49,7 @@ public class SupermercadoEnvironment extends Environment {
 
         return false;
     }
-
+    
 	//TODO: Complete this section with agent-specific methods
     // The following methods are agent-specific:
     

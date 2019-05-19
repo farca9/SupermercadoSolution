@@ -37,8 +37,8 @@ public class ComprarProducto extends SearchAction {
         			//Chequeo que efectivamente el agente esta en un comercio de la Matriz
         			if(coordinadas.equals(pc.getComercio().getUbicacion())) {
         				
-        				//Chequeo si en el supermercado actual est� el producto que busco
-            			if(producto.getKey().equals(pc.getProducto())) {
+        				//Chequeo si en el supermercado actual esta el producto que busco
+            			if(producto.getKey().equals(pc.getProducto()) && !producto.getValue()) {
             				
             				//Compro el producto
             				producto.setValue(true);
@@ -81,7 +81,7 @@ public class ComprarProducto extends SearchAction {
         			if(coordinadas.equals(pc.getComercio().getUbicacion())) {
         				
         				//Chequeo si en el supermercado actual est� el producto que busco
-            			if(producto.getKey().equals(pc.getProducto())) {
+            			if(producto.getKey().equals(pc.getProducto()) && !producto.getValue()) {
             				
             				//Compro el producto
             				producto.setValue(true);
