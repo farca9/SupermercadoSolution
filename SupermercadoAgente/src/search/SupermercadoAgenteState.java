@@ -369,16 +369,17 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	Mapa[help][16]= new MapUnit(TipoEnum.CALLENORMAL, normalTime, normalCost, true , false, true, false);
     	help++;
     	
-    	Mapa[1][2].setTipo(TipoEnum.CONGESTION);
-    	Mapa[1][10].setTipo(TipoEnum.BACHE);
-    	Mapa[2][4].setTipo(TipoEnum.BACHE);
-    	Mapa[3][1].setTipo(TipoEnum.EVENTO);
-    	Mapa[3][12].setTipo(TipoEnum.CONGESTION);
-    	Mapa[4][16].setTipo(TipoEnum.CONGESTION);
-    	Mapa[5][6].setTipo(TipoEnum.CONGESTION);
-    	Mapa[7][3].setTipo(TipoEnum.CONGESTION);
-    	Mapa[7][8].setTipo(TipoEnum.BACHE);
-    	Mapa[8][12].setTipo(TipoEnum.EVENTO);
+    	/*
+    	Mapa[1][2].setTipo(TipoEnum.CONGESTION); 
+		Mapa[1][10].setTipo(TipoEnum.BACHE);
+		Mapa[2][4].setTipo(TipoEnum.BACHE); 
+		Mapa[3][1].setTipo(TipoEnum.EVENTO);
+		Mapa[3][12].setTipo(TipoEnum.CONGESTION);
+		Mapa[4][16].setTipo(TipoEnum.CONGESTION);
+		Mapa[5][6].setTipo(TipoEnum.CONGESTION);
+		Mapa[7][3].setTipo(TipoEnum.CONGESTION); 
+		Mapa[7][8].setTipo(TipoEnum.BACHE);
+		Mapa[8][12].setTipo(TipoEnum.EVENTO);*/
     	
 	}
 

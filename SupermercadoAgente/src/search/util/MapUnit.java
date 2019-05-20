@@ -37,7 +37,7 @@ public class MapUnit {
 	public TipoEnum getTipo() {
 		return Tipo;
 	}
-	public void setTipo(TipoEnum tipo) {
+	public void modificarTipo(TipoEnum tipo) {
 		Tipo = tipo;
 
 		if(Tipo == TipoEnum.CONGESTION) {
@@ -52,6 +52,11 @@ public class MapUnit {
 		}
 		
 	}
+	
+	public void setTipo(TipoEnum tipo) {
+		Tipo = tipo;
+	}
+	
 	public int getTiempo() {
 		return Tiempo;
 	}
