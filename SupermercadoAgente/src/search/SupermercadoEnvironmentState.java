@@ -39,10 +39,9 @@ public class SupermercadoEnvironmentState extends EnvironmentState {
      */
     @Override
     public String toString() {
-        String str = "";
-
-        //TODO: Complete Method
-
+        String str = "\n- Lista Productos: " + ListaProductos.toString() + "\n";
+        str+="- Matriz ProductoComercio: \n" +"  "+ MatrizProductoComercio.toString() + "\n";
+        str += "- Ubicacion Actual: ("+ UbicacionAgente.x+","+UbicacionAgente.y+")\n";
         return str;
     }
 
