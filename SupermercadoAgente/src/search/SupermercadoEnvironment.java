@@ -34,7 +34,11 @@ public class SupermercadoEnvironment extends Environment {
      */
     @Override
     public  SupermercadoAgentePerception getPercept() {
-        // Create a new perception to return
+       
+    	
+
+    	
+    	// Create a new perception to return
         SupermercadoAgentePerception perception = new SupermercadoAgentePerception();
 		
 		SupermercadoEnvironmentState state = (SupermercadoEnvironmentState)this.environmentState;

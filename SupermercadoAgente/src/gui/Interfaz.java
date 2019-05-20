@@ -256,7 +256,7 @@ public class Interfaz {
 		    		Producto nuevoProducto = new Producto(Integer.parseInt(codigo_producto.getText()),nombre_producto.getText());
 		    		ProductoComercio nuevo = new ProductoComercio(nuevoProducto,comercioSeleccionado,Double.parseDouble(precio_producto.getText()));
 		    		ambiente.getMatrizProductoComercio().add(nuevo);
-			    	frame.dispose();
+			    	//frame.dispose();
 			    	actualizarInterfaz(agente,ambiente);
 		    	}
 				
@@ -316,8 +316,8 @@ public class Interfaz {
 		    		  Producto nuevoProducto = new Producto(Integer.parseInt(codigo_producto.getText()),nombre_producto.getText());
 		    		  ProductoComercio nuevo = new ProductoComercio(nuevoProducto,nuevoComercio,Double.parseDouble(precio_producto.getText()));
 		    		  ambiente.getMatrizProductoComercio().add(nuevo);
-		    		  agente.getMapa()[ubicacionComercio.x][ubicacionComercio.y].setTipo(TipoEnum.SUPERMERCADO);
-			    	  frame.dispose();
+		    		  ambiente.getMapa()[ubicacionComercio.x][ubicacionComercio.y].modificarTipo(TipoEnum.SUPERMERCADO);
+			    	  //frame.dispose();
 			    	  actualizarInterfaz(agente,ambiente);
 		    	  }
 		    	  
@@ -398,7 +398,7 @@ public class Interfaz {
 		    	  }
 		    	
 		    	  Point ubicacionEvento = calles.get(cmbCalles.getSelectedIndex());
-		    	  ambiente.getMapa()[ubicacionEvento.x][ubicacionEvento.y].setTipo(tipoEvento);
+		    	  ambiente.getMapa()[ubicacionEvento.x][ubicacionEvento.y].modificarTipo(tipoEvento);
 			      //frame.dispose();
 			      actualizarInterfaz(agente,ambiente);
 		    	 }

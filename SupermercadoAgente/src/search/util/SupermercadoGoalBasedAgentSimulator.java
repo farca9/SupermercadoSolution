@@ -18,6 +18,7 @@ public class SupermercadoGoalBasedAgentSimulator extends SearchBasedAgentSimulat
 	
 	private static Interfaz gui;
 	public static boolean stop=true;
+	public static int counter=0;
 	
 	public SupermercadoGoalBasedAgentSimulator(Environment environment, Agent agent) {
 		super(environment, agent);
@@ -72,6 +73,8 @@ public class SupermercadoGoalBasedAgentSimulator extends SearchBasedAgentSimulat
             this.actionReturned(agent, action);
             
             gui.actualizarInterfaz((SupermercadoAgenteState)agent.getAgentState(),(SupermercadoEnvironment)environment);
+            
+            counter++;
             
             stop=true;
             while(stop) {
