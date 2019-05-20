@@ -1,10 +1,17 @@
 package search.util;
 
 import search.CostFunction;
-import search.util.CostFunctionType;
+import search.util.*;
 
 public class MapUnit {
 
+	private static final int BACHECOST = 5;
+	private static final int BACHETIME = 10;
+	private static final int EVENTOCOST = 3;
+	private static final int EVENTOTIME = 20;
+	private static final int CONGESTIONCOST = 8;
+	private static final int CONGESTIONTIME = 17;
+	
 	private TipoEnum Tipo;
 	private int Tiempo;
 	private int Costo;
@@ -33,6 +40,18 @@ public class MapUnit {
 	}
 	public void setTipo(TipoEnum tipo) {
 		Tipo = tipo;
+
+		if(Tipo == TipoEnum.CONGESTION) {
+			Costo+=CONGESTIONCOST;
+			Tiempo+=CONGESTIONTIME;
+		} else if (Tipo == TipoEnum.BACHE) {
+			Costo+=BACHECOST;
+			Tiempo+=BACHETIME;
+		} else if (Tipo == TipoEnum.EVENTO) {
+			Costo+=EVENTOCOST;
+			Tiempo+=EVENTOTIME;
+		}
+		
 	}
 	public int getTiempo() {
 		return Tiempo;

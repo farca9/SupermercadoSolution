@@ -12,6 +12,8 @@ import search.util.Comercio;
 import search.util.MapUnit;
 import search.util.Producto;
 import search.util.ProductoComercio;
+import search.util.SupermercadoGoalBasedAgentSimulator;
+import search.util.TipoEnum;
 
 public class SupermercadoEnvironment extends Environment {
 
@@ -33,13 +35,14 @@ public class SupermercadoEnvironment extends Environment {
     @Override
     public  SupermercadoAgentePerception getPercept() {
         // Create a new perception to return
-         SupermercadoAgentePerception perception = new SupermercadoAgentePerception();
+        SupermercadoAgentePerception perception = new SupermercadoAgentePerception();
 		
 		SupermercadoEnvironmentState state = (SupermercadoEnvironmentState)this.environmentState;
 		
 		perception.setMapaPerception(state.getMapa());
 		perception.setListaProductosPerception(state.getListaProductos());
 		perception.setMatrizProductoComercioPerception(state.getMatrizProductoComercio());
+		
 		
         return perception;
     }

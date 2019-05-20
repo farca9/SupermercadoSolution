@@ -48,6 +48,8 @@ public class Interfaz {
     public static SupermercadoAgenteState agente = null;
     public static SupermercadoEnvironment ambiente = null;
     private static boolean estadoInicial = true;
+    private static Point ubicacionInicial;
+    private static int estado = 0;
 	
 	
 	public static void inicializarInterfaz() {
@@ -141,68 +143,36 @@ public class Interfaz {
 			JButton btnProximoMovimiento = new JButton ("Iniciar Simulación");
 			btnProximoMovimiento.setAlignmentX(Component.CENTER_ALIGNMENT);
 			
-			try {
-				
-				File imageFile1 = new File("src/gui/drawable/play.png"); 
-				BufferedImage img1 = ImageIO.read(imageFile1);
-				
-				File imageFile2 = new File("src/gui/drawable/next.png"); 
-				BufferedImage img2 = ImageIO.read(imageFile2);
-				
-				if(estadoInicial) btnProximoMovimiento.setIcon(new ImageIcon(img1));
-				else btnProximoMovimiento.setIcon(new ImageIcon(img2));
-				
-				} catch (Exception ex) {
-				System.out.println(ex);
-			}
-			
+	    	if(!ubicacionInicial.equals(ambiente.getUbicacionAgente())) {
+				try {
+	    			File imageFile2 = new File("src/gui/drawable/next.png"); 
+	    			BufferedImage img2 = ImageIO.read(imageFile2);
+	    			btnProximoMovimiento.setIcon(new ImageIcon(img2));
+	    		} catch (Exception ex) {
+	    			System.out.println(ex);
+	    		}
+				estadoInicial = false;
+				btnProximoMovimiento.setText("Próximo Movimiento");				
+	    	}
+			else {
+	    		try {
+	    			File imageFile1 = new File("src/gui/drawable/play.png"); 
+	    			BufferedImage img1 = ImageIO.read(imageFile1);
+	    			btnProximoMovimiento.setIcon(new ImageIcon(img1));
+	    		} catch (Exception ex) {
+	    			System.out.println(ex);
+	    		}
+	    		estadoInicial = true;
+	    		btnProximoMovimiento.setText("Iniciar Simulación");
+
+			}		
 			
 			btnProximoMovimiento.addActionListener(new ActionListener(){
-		    public void actionPerformed(ActionEvent e)
-		    {
-		    	if(estadoInicial) {
-					try {
-		    			File imageFile2 = new File("src/gui/drawable/next.png"); 
-		    			BufferedImage img2 = ImageIO.read(imageFile2);
-		    			btnProximoMovimiento.setIcon(new ImageIcon(img2));
-		    		} catch (Exception ex) {
-		    			System.out.println(ex);
-		    		}
-					estadoInicial = false;
-					btnProximoMovimiento.setText("Próximo Movimiento");
-					/*ambiente.setUbicacionAgente(new Point(0,0));*/
-					
-			  		/*frame.invalidate();
-					frame.validate();
-					frame.repaint();*/
-					
-					SupermercadoGoalBasedAgentSimulator.stop=false;
-
-					
-		    	}
-				else {
-		    		try {
-		    			File imageFile1 = new File("src/gui/drawable/play.png"); 
-		    			BufferedImage img1 = ImageIO.read(imageFile1);
-		    			btnProximoMovimiento.setIcon(new ImageIcon(img1));
-		    		} catch (Exception ex) {
-		    			System.out.println(ex);
-		    		}
-		    		estadoInicial = true;
-		    		btnProximoMovimiento.setText("Iniciar Simulación");
-		    		//ambiente.setUbicacionAgente(new Point(8,0));
-
-		    		
-		    		/*frame.invalidate();
-					frame.validate();
-					frame.repaint();*/
-		    		
-		    		SupermercadoGoalBasedAgentSimulator.stop=false;
-
-				}
-		    	
-		      }
-		    });
+			    public void actionPerformed(ActionEvent e)
+			    {
+			    	SupermercadoGoalBasedAgentSimulator.stop = false;
+			    }
+			});
 			
 			JButton btnAgregarProductos = new JButton("Añadir Productos a Mi Lista");
 			btnAgregarProductos.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -354,6 +324,90 @@ public class Interfaz {
 		      }
 		    });
 			
+			JButton btnAgregarEvento = new JButton("Agregar Evento");
+			btnAgregarEvento.setAlignmentX(Component.CENTER_ALIGNMENT);
+			btnAgregarEvento.addActionListener(new ActionListener()
+		    {
+		      public void actionPerformed(ActionEvent e)
+		      {
+		    	  ArrayList<Point> calles = new ArrayList<Point>();
+		    	  for (int i = 0; i < ambiente.getMapa().length; i++) {
+		                for (int j = 0; j < ambiente.getMapa()[i].length; j++) {
+		                	if(ambiente.getMapa()[i][j].getTipo().equals(TipoEnum.CALLENORMAL) || 
+		                	   ambiente.getMapa()[i][j].getTipo().equals(TipoEnum.EVENTO) || 
+		                	   ambiente.getMapa()[i][j].getTipo().equals(TipoEnum.CALLECORTADA) || 
+		                	   ambiente.getMapa()[i][j].getTipo().equals(TipoEnum.BACHE) || 
+		                	   ambiente.getMapa()[i][j].getTipo().equals(TipoEnum.CONGESTION)) {
+		                	   calles.add(new Point(i,j));
+		                	}
+		                }
+		          }
+		    	  
+		    	  String[] lista_calles = new String[calles.size()];
+		    	  for(int i = 0; i < calles.size(); i++) {
+		    		  lista_calles[i] = "(" + calles.get(i).x + ";" + calles.get(i).y + ")";
+		    	  }
+		    	  
+		    	  JComboBox cmbCalles = new JComboBox(lista_calles);
+		    	  
+		    	 
+		    	  File evento = new File("src/gui/drawable/cmbEvento.png");
+		    	  File cortada = new File("src/gui/drawable/cmbCortada.png");
+		    	  File bache = new File("src/gui/drawable/cmbBache.png");
+		    	  File congestion = new File("src/gui/drawable/cmbCongestion.png");
+		    	  BufferedImage imgEvento = null, imgCortada = null, imgBache = null, imgCongestion = null;
+		    	  
+		    	  if(evento != null && cortada != null && bache != null && congestion != null){
+		            	try {
+		            		imgEvento = ImageIO.read(evento);
+		            		imgCortada = ImageIO.read(cortada);
+		            		imgBache = ImageIO.read(bache);
+		            		imgCongestion = ImageIO.read(congestion);
+		    			} catch (IOException e1) {
+		    				// TODO Auto-generated catch block
+		    				e1.printStackTrace();
+		    			}        	
+		          }
+		    	  
+		    	  Object[] iconos = {
+		    			  new ImageIcon(imgEvento),
+		    			  new ImageIcon(imgCortada),
+		    			  new ImageIcon(imgBache),
+		    			  new ImageIcon(imgCongestion),
+		    	  };
+		    	  
+		    	  JComboBox cmbEventos = new JComboBox(iconos);
+		    	  
+		    	  final JComponent[] inputs = new JComponent[] {
+		    			  new JLabel("Evento"),
+		    	          cmbEventos,
+		    			  new JLabel("Ubicación"),
+		    	          cmbCalles
+		    	  };
+		    	  
+		    	  int result = JOptionPane.showConfirmDialog(null, inputs, "Agregar evento", JOptionPane.PLAIN_MESSAGE);
+		    	  
+		    	  if (result == JOptionPane.OK_OPTION) {
+		    		  
+		    		  TipoEnum tipoEvento = null;
+		    		  switch(cmbEventos.getSelectedIndex()) {
+		    		  case 0: tipoEvento = TipoEnum.EVENTO; break;
+		    		  case 1: tipoEvento = TipoEnum.CALLECORTADA; break;
+		    		  case 2: tipoEvento = TipoEnum.BACHE; break;
+		    		  case 3: tipoEvento = TipoEnum.CONGESTION; break;
+		    	  }
+		    	
+		    	  Point ubicacionEvento = calles.get(cmbCalles.getSelectedIndex());
+		    	  ambiente.getMapa()[ubicacionEvento.x][ubicacionEvento.y].setTipo(tipoEvento);
+			      //frame.dispose();
+			      actualizarInterfaz(agente,ambiente);
+		    	 }
+		    	  
+		      }
+		    });
+			
+
+			
 			comandos.add(btnProximoMovimiento);
 			comandos.add(new JLabel("\n"));
 			comandos.add(btnAgregarProductos);
@@ -362,6 +416,11 @@ public class Interfaz {
 			comandos.add(new JLabel("\n"));
 			comandos.add(btnAgregarComercios);
 			comandos.add(new JLabel("\n"));
+			comandos.add(btnAgregarEvento);
+			comandos.add(new JLabel("\n"));
+			
+			//por ahora
+			btnAgregarComercios.setEnabled(false);
 		
 			  
         datos.add(listaProductos);
@@ -374,6 +433,7 @@ public class Interfaz {
              
         frame.setVisible(true);
         
+        estado++;
         
 	}
 	
@@ -381,7 +441,7 @@ public class Interfaz {
 		
 		agente=agenteR.clone();
 		ambiente=ambienteR;
-		
+		if(estado==0) ubicacionInicial = agenteR.getUbicacion();
 		inicializarInterfaz();
 		
 	}

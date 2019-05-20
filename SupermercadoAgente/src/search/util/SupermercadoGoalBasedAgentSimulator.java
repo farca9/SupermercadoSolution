@@ -15,6 +15,7 @@ import frsf.cidisi.faia.simulator.events.SimulatorEventNotifier;
 
 public class SupermercadoGoalBasedAgentSimulator extends SearchBasedAgentSimulator {
 
+	
 	private static Interfaz gui;
 	public static boolean stop=true;
 	
@@ -80,6 +81,7 @@ public class SupermercadoGoalBasedAgentSimulator extends SearchBasedAgentSimulat
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+            	
             }
             
         } while (!this.agentSucceeded(action) && !this.agentFailed(action));

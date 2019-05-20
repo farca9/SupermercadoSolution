@@ -158,8 +158,8 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 10.0));
     	
     	//Ubicacion Inicial
-    	this.Ubicacion=new Point(5,14);
-    	this.UbicacionAnterior=new Point(5,14);
+    	this.Ubicacion=new Point(8,6);
+    	this.UbicacionAnterior=new Point(8,6);
     	
     	//Cargar el mapa
     	Mapa = new MapUnit[10][17];

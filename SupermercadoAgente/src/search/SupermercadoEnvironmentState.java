@@ -112,7 +112,7 @@ public class SupermercadoEnvironmentState extends EnvironmentState {
     	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 10.0));
     	
     	//Ubicacion Inicial
-    	this.UbicacionAgente=new Point(5,14);
+    	this.UbicacionAgente=new Point(8,6);
     	
     	//Cargar el mapa
     	Mapa = new MapUnit[10][17];
