@@ -55,8 +55,8 @@ public class SupermercadoAgente extends SearchBasedAgent {
     	CostFunction.Type=CostFunctionType.TRAVELMONEY;
         //UniformCostSearch strategy = new UniformCostSearch(new CostFunction());
         //GreedySearch strategy = new GreedySearch(new Heuristic());
-    	AStarSearch strategy = new AStarSearch(new CostFunction(), new Heuristic());
-        //BreathFirstSearch strategy = new BreathFirstSearch();
+    	//AStarSearch strategy = new AStarSearch(new CostFunction(), new Heuristic());
+        BreathFirstSearch strategy = new BreathFirstSearch();
     	//DepthFirstSearch strategy = new DepthFirstSearch();
     	
         // Create a Search object with the strategy

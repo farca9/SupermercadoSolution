@@ -76,6 +76,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
         
     	SupermercadoAgentePerception sap=(SupermercadoAgentePerception)p;
     	
+    	
     	//El agente actualiza su estado con los valores del mapa percibido
     	for(int i=0;i<sap.getMapaPerception().length;i++) {
     		for(int j=0;j<sap.getMapaPerception()[0].length;j++) {
@@ -109,6 +110,8 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     		
     	}
     	
+    	
+    	
     	this.ListaProductos=listaProductosNew;
     	
     	
@@ -131,7 +134,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	//Producto(s)
     	Producto p1 = new Producto(1,"Huevos");
     	Producto p2 = new Producto(2,"Pan");
-    	//Producto p3 = new Producto(3,"Queso");
+    	Producto p3 = new Producto(3,"Queso");
     	
     	//Comercio(s)
     	Comercio alvear = new Comercio(1,"Alvear", new Point(2,7));
@@ -150,8 +153,8 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	MatrizProductoComercio.add(new ProductoComercio(p1, patricia, 5.0));
     	MatrizProductoComercio.add(new ProductoComercio(p2, patricia, 10.0));
     	MatrizProductoComercio.add(new ProductoComercio(p2, kilbel, 2.0));
-    	//MatrizProductoComercio.add(new ProductoComercio(p3, kilbel, 10.0));
-    	//MatrizProductoComercio.add(new ProductoComercio(p3, alvear, 3.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p3, kilbel, 10.0));
+    	MatrizProductoComercio.add(new ProductoComercio(p3, alvear, 3.0));
     	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 10.0));
     	
     	//Ubicacion Inicial

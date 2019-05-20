@@ -105,7 +105,9 @@ public class SupermercadoEnvironment extends Environment {
 		
 		ArrayList<Producto> productos = new ArrayList<Producto>();
 		for(Producto p : setProductos) {
-			productos.add(p);
+			if(!productos.contains(p)) {
+				productos.add(p);
+			}
 		}
 		
 		return productos;

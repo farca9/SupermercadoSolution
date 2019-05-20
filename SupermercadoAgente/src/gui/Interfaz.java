@@ -237,12 +237,15 @@ public class Interfaz {
 			    	          new JLabel("Elija un Producto"),
 			    	          cmbProductos
 			    	  };
-			    	  int codigo_producto = ambiente.getProductos().get(cmbProductos.getSelectedIndex()).getId();
+			    	  
+			    	  Producto pSelect = resultado.get(cmbProductos.getSelectedIndex());
+			    	  int codigo_producto = pSelect.getId();
 			    	  int result = JOptionPane.showConfirmDialog(null, inputs, "Añadir producto", JOptionPane.PLAIN_MESSAGE);
 			    	  if (result == JOptionPane.OK_OPTION) {
-				    	  ambiente.getListaProductos().add(new Producto(codigo_producto,cmbProductos.getSelectedItem().toString()));
-				    	  frame.dispose();
-				    	  actualizarInterfaz(agente,ambiente);
+				    	  Producto pN = new Producto(codigo_producto,cmbProductos.getSelectedItem().toString()); 
+			    		  ambiente.getListaProductos().add(pN);
+				    	  //frame.dispose();
+				    	  //actualizarInterfaz(agente,ambiente);
 			    	  }
 		    	  }
 		    	  	  
@@ -376,7 +379,7 @@ public class Interfaz {
 	
 	public static void actualizarInterfaz(SupermercadoAgenteState agenteR, SupermercadoEnvironment ambienteR) {
 		
-		agente=agenteR;
+		agente=agenteR.clone();
 		ambiente=ambienteR;
 		
 		inicializarInterfaz();
