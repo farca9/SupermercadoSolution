@@ -210,8 +210,8 @@ public class Interfaz {
 		    {
 		      public void actionPerformed(ActionEvent e)
 		      {
-		    	  ArrayList<Producto> listados = ambiente.getProductos();
-		    	  ArrayList<Producto> disponibles = (ArrayList)ambiente.getListaProductos();
+		    	  ArrayList<Producto> disponibles = ambiente.getProductos();
+		    	  ArrayList<Producto> listados = (ArrayList)ambiente.getListaProductos();
 		    	  ArrayList<Producto> resultado = new ArrayList<Producto>();
 		    	  
 		    	  for(Producto pD : disponibles) {
@@ -560,8 +560,8 @@ public class Interfaz {
         	        	
         	File up = null, down = null, left = null, right = null;
         	BufferedImage imageUp = null, imageDown = null, imageLeft = null, imageRight = null; 
-            if(this.mapUnit.isUp()) up = new File("src/gui/drawable/up.png");  else up = new File("src/gui/drawable/Pixel.png");
-            if(this.mapUnit.isDown()) down = new File("src/gui/drawable/down.png");  else down = new File("src/gui/drawable/Pixel.png");
+            if(this.mapUnit.isDown()) up = new File("src/gui/drawable/up.png");  else up = new File("src/gui/drawable/Pixel.png");
+            if(this.mapUnit.isUp()) down = new File("src/gui/drawable/down.png");  else down = new File("src/gui/drawable/Pixel.png");
             if(this.mapUnit.isLeft()) left = new File("src/gui/drawable/left.png");  else left = new File("src/gui/drawable/Pixel.png");
             if(this.mapUnit.isRight()) right = new File("src/gui/drawable/right.png");  else right = new File("src/gui/drawable/Pixel.png");   
             
