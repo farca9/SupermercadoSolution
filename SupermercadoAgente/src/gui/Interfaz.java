@@ -72,7 +72,7 @@ public class Interfaz {
 		for (int i = 0; i < agente.getMapa().length; i++) {
             for (int j = 0; j < agente.getMapa()[i].length; j++) {
             	Square square = new Square();
-            	square.setMapUnit(agente.getMapa()[i][j]);
+            	square.setMapUnit(agente.getMapa()[i][agente.getMapa()[i].length-1-j]);
                 mapaGrafico[i][j] = square;  
             }
         }
@@ -469,7 +469,7 @@ public class Interfaz {
 	        	y = y/60;
 	        	
 	        	if(x<squares.length && y<squares[0].length) {
-	        		return squares[x][y].getMapUnit().getTipo().toString()+" @ ("+x+";"+y+")";
+	        		return squares[x][y].getMapUnit().getTipo().toString()+" @ ("+x+";"+(squares[0].length-1-y)+")";
 	        	} else return null;
 	        	
 	        }
@@ -486,9 +486,9 @@ public class Interfaz {
 	                for (int j = 0; j < squares[i].length; j++) {
 
 	                	//Calculo de las dimensiones de cada cuadrado de la cuadricula
-	                    Square currentSquare = squares[i][j];
+	                    Square currentSquare = squares[i][squares[i].length-1-j];
 	                    int x = i * (width / squares.length);
-	                    int y = j * (height / squares.length);
+	                    int y = (squares[i].length-1-j) * (height / squares.length);
 	                    int xx = x + ((width / squares.length)/2) - (currentSquare.getImage().getWidth()/2);
 	                    int yy = y + ((height / squares.length)/2) - (currentSquare.getImage().getHeight()/2);
 
@@ -623,8 +623,8 @@ public class Interfaz {
         	        	
         	File up = null, down = null, left = null, right = null;
         	BufferedImage imageUp = null, imageDown = null, imageLeft = null, imageRight = null; 
-            if(this.mapUnit.isDown()) up = new File("src/gui/drawable/up.png");  else up = new File("src/gui/drawable/Pixel.png");
-            if(this.mapUnit.isUp()) down = new File("src/gui/drawable/down.png");  else down = new File("src/gui/drawable/Pixel.png");
+            if(this.mapUnit.isUp()) up = new File("src/gui/drawable/up.png");  else up = new File("src/gui/drawable/Pixel.png");
+            if(this.mapUnit.isDown()) down = new File("src/gui/drawable/down.png");  else down = new File("src/gui/drawable/Pixel.png");
             if(this.mapUnit.isLeft()) left = new File("src/gui/drawable/left.png");  else left = new File("src/gui/drawable/Pixel.png");
             if(this.mapUnit.isRight()) right = new File("src/gui/drawable/right.png");  else right = new File("src/gui/drawable/Pixel.png");   
             
