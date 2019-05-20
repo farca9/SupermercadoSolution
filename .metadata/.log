@@ -6733,3 +6733,27 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 !ENTRY org.apache.ivyde.eclipse 1 0 2019-05-20 10:30:48.106
 !MESSAGE IvyDE plugin started
 >>>>>>> develop
+
+!ENTRY org.apache.ivyde.eclipse 1 0 2019-05-20 11:27:49.043
+!MESSAGE starting IvyDE plugin
+
+!ENTRY org.apache.ivyde.eclipse 1 0 2019-05-20 11:27:49.068
+!MESSAGE IvyDE plugin started
+
+!ENTRY com.vaadin.designer2 1 0 2019-05-20 11:55:36.285
+!MESSAGE Jetty stopped at http://null:0
+
+!ENTRY com.vaadin.designer2 1 0 2019-05-20 11:55:36.288
+!MESSAGE Removed all models from server.
+
+!ENTRY com.vaadin.designer2 1 0 2019-05-20 11:55:36.290
+!MESSAGE Jetty stopped at http://null:0
+
+!ENTRY com.vaadin.designer2 1 0 2019-05-20 11:55:36.292
+!MESSAGE Removed all models from server.
+
+!ENTRY com.vaadin.designer2 1 0 2019-05-20 11:55:36.295
+!MESSAGE Jetty stopped at http://null:0
+
+!ENTRY com.vaadin.designer2 1 0 2019-05-20 11:55:36.297
+!MESSAGE Removed all models from server.

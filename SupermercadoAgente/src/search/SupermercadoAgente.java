@@ -52,7 +52,7 @@ public class SupermercadoAgente extends SearchBasedAgent {
     public Action selectAction() {
 
         // Create the search strategy
-    	CostFunction.Type=CostFunctionType.TRAVELMONEY;
+    	//CostFunction.Type=CostFunctionType.TRAVELMONEY;
         //UniformCostSearch strategy = new UniformCostSearch(new CostFunction());
         //GreedySearch strategy = new GreedySearch(new Heuristic());
     	//AStarSearch strategy = new AStarSearch(new CostFunction(), new Heuristic());

@@ -32,7 +32,6 @@ public class MapUnit {
 		this.Down = Down;
 		this.Left = Left;
 		this.Right = Right;
-		
 	}
 	
 	public TipoEnum getTipo() {

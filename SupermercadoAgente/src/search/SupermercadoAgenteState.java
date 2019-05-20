@@ -136,6 +136,7 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	Producto p2 = new Producto(2,"Pan");
     	Producto p3 = new Producto(3,"Queso");
     	
+    	
     	//Comercio(s)
     	Comercio alvear = new Comercio(1,"Alvear", new Point(2,7));
     	Comercio kilbel = new Comercio(2,"Kilbel", new Point(0,14));
@@ -151,10 +152,10 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	//Matriz producto comercio
     	this.MatrizProductoComercio=new ArrayList();
     	MatrizProductoComercio.add(new ProductoComercio(p1, patricia, 5.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p2, patricia, 10.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p2, patricia, 10.0));
     	MatrizProductoComercio.add(new ProductoComercio(p2, kilbel, 2.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p3, kilbel, 10.0));
-    	MatrizProductoComercio.add(new ProductoComercio(p3, alvear, 3.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p3, kilbel, 10.0));
+    	//MatrizProductoComercio.add(new ProductoComercio(p3, alvear, 3.0));
     	MatrizProductoComercio.add(new ProductoComercio(p1, alvear, 10.0));
     	
     	//Ubicacion Inicial
@@ -368,7 +369,16 @@ public class SupermercadoAgenteState extends SearchBasedAgentState {
     	Mapa[help][16]= new MapUnit(TipoEnum.CALLENORMAL, normalTime, normalCost, true , false, true, false);
     	help++;
     	
-    	
+    	Mapa[1][2].setTipo(TipoEnum.CONGESTION);
+    	Mapa[1][10].setTipo(TipoEnum.BACHE);
+    	Mapa[2][4].setTipo(TipoEnum.BACHE);
+    	Mapa[3][1].setTipo(TipoEnum.EVENTO);
+    	Mapa[3][12].setTipo(TipoEnum.CONGESTION);
+    	Mapa[4][16].setTipo(TipoEnum.CONGESTION);
+    	Mapa[5][6].setTipo(TipoEnum.CONGESTION);
+    	Mapa[7][3].setTipo(TipoEnum.CONGESTION);
+    	Mapa[7][8].setTipo(TipoEnum.BACHE);
+    	Mapa[8][12].setTipo(TipoEnum.EVENTO);
     	
 	}
 
